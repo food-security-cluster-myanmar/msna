@@ -1,0 +1,506 @@
+---
+title: "DRAFT EDA Notes MSNA"
+author: "Myanmar Food Security Cluster"
+date: "08/09/2022"
+output: 
+  html_document:
+    code_download: true
+    code_folding: hide
+    theme: readable
+    toc: true
+    toc_depth: 4
+    toc_float: true
+    number_sections: false
+    collapsed: false
+always_allow_html: true   
+---
+
+```{css, echo=FALSE}
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 70px;
+  margin: 2em 20px 40px 20px;
+  background-image: url("Myanmar_cluster_blue.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+```
+
+```{=html}
+<style>
+    body .main-container {
+        max-width: 1280px;
+    }
+</style>
+```
+
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(tidyverse)
+library(scales)
+library(janitor)
+library(haven)
+library(psych)
+library(skimr)
+library(mdepriv)
+library(broom)
+library(readxl)
+library(widyr)
+library(DT)
+library(viridis)
+library(corrplot)
+library(rpart)
+library(rpart.utils)
+library(rattle)
+library(rpart.plot)
+library(randomForest)
+library(broomstick)
+library(patchwork)
+library(tidymodels)
+library(vip)
+library(glmnet)
+library(tidytext)
+library(flextable)
+
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+opts <- options(knitr.kable.NA = "")
+
+`%out%` <- Negate(`%in%`)
+
+# disabling scientific notation
+options(scipen = 999)
+
+theme_set(theme_light())
+```
+
+
+
+```{r data, message=FALSE, warning=FALSE}
+
+pcodes <- read_excel("./data/Myanmar PCodes Release_9.3_Jan2021_(StRgn_Dist_Tsp_Town_Ward_VT).xlsx",
+                     sheet = "03_Township") 
+
+acled <- read_csv("./data/acled_20220606.csv") %>% 
+  left_join(pcodes %>% select(admin3_pcode = Tsp_Pcode, 
+                             admin2_pcode = `District/SAZ_Pcode`, 
+                             admin2 = `District/SAZ_Name_Eng`,
+                             admin1_pcode = SR_Pcode),
+            by = "admin3_pcode") %>% 
+  rename(admin2 = admin2.y) %>% 
+  filter(year >= 2021) 
+
+conflict_score <-  read_csv("https://github.com/food-security-cluster-myanmar/mmr_township_prioritisation/blob/main/data/conflict_score2.csv") 
+
+pin <- read_csv("./data/fs_pin.csv") 
+
+codebook <- read_csv("./data/mhws_rd1_codebook.csv") %>% clean_names
+
+msna_raw <- read_dta("./data/mhws_rd1.dta") %>% zap_labels()
+
+survey <- read_csv("./data/survey3.csv")
+
+survey_mini <- read_csv("./data/survey_mini.csv")
+
+mini <- read_csv("./data/mini.csv")
+
+
+```
+
+
+
+
+
+<br><br><br>
+
+## Findings
+
+This has been a cursory examination, given the limited timeframe. But, it is apparent that the results of the MSNA are robust and that it will be an excellent tool to improve programmatic and operational decision making. 
+
+However, more thorough analysis is required. I have only just looked at a small portion of the data. But please find below some of my initial observations. 
+
+<br><br><br>
+
+## 1. Histograms of food consumption scores 
+
+```{r}
+mini %>% 
+  ggplot(aes(x = hhfcs)) + 
+  geom_histogram(bins=30) + 
+  geom_freqpoly(binwidth = 2, 
+                colour = "red") + 
+  labs(x = "Food consumption score", 
+       y = "Number of households", 
+       title = "Normal distribution of food consumption scores", 
+       subtitle = "In the MSNA", 
+       caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")
+
+```
+<br>
+
+This is a good looking, quite normal distribution of food consumption scores. 
+
+For reference, the distribution of food consumption scores in the surveyed population of the FAO/WFP survey looks like this, a bit more skewed and misshapen, probably due to the smaller sample size. 
+
+<br>
+
+```{r}
+survey %>% 
+  ggplot(aes(x = hhfcs)) + 
+  geom_histogram(bins=30) +
+  geom_freqpoly(binwidth = 2, 
+                colour = "red") + 
+  labs(x = "Food consumption score", 
+       y = "Number of households", 
+       title = "Distribution of food consumption scores", 
+       subtitle = "In round 3 of the FAO/WFP food security survey", 
+       caption = "FAO/WFP food security survey round 3 2022")
+```
+
+<br>
+
+As a purely academic point of reference, since much more work needs to be done one this, but there does seem to have been an increase in the percentage of the population with borderline and poor FCS scores compared to round 3 of th FAO/WFP survey. This would imply an increase in the PIN. 
+
+However, a lot of the fluctuation has to do with seasonality, so it is best to hold off until round 4 is ready to explore this further. 
+
+<br> 
+
+```{r}
+survey %>% select(weight_final, 
+                  fcs_borderline_poor) %>% 
+  mutate(weighted = ifelse(fcs_borderline_poor == 1, 
+                           weight_final, 0), 
+         count = 1) %>% 
+  summarise(fcs_borderline_poor = sum(fcs_borderline_poor), 
+            count = sum(count), 
+            weighted = sum(weighted), 
+            tot_weight = sum(weight_final)) %>% 
+  mutate(borderline_poor_unweighted = fcs_borderline_poor / count, 
+         borderline_poor_weighted = weighted / tot_weight) %>% 
+  select(borderline_poor_unweighted, 
+         borderline_poor_weighted) %>% 
+  mutate_all(~round(. * 100, digits = 2)) %>% 
+  mutate(survey = "MSNA") %>% 
+rbind(
+  
+mini %>% 
+  mutate(fcs_borderline_poor = ifelse(hhfcs <= 35, 
+                                      1, 0)) %>% 
+  left_join(msna_raw %>% 
+              select(hhid, hhweight), 
+            by = "hhid") %>% 
+  select(hhweight, fcs_borderline_poor) %>% 
+  mutate(weighted = ifelse(fcs_borderline_poor == 1, 
+                           hhweight, 0), 
+         count = 1) %>% 
+  summarise(fcs_borderline_poor = sum(fcs_borderline_poor), 
+            count = sum(count), 
+            weighted = sum(weighted), 
+            tot_weight = sum(hhweight)) %>% 
+  mutate(borderline_poor_unweighted = fcs_borderline_poor / count, 
+         borderline_poor_weighted = weighted / tot_weight) %>% 
+  select(borderline_poor_unweighted, 
+         borderline_poor_weighted) %>% 
+  mutate_all(~round(. * 100, digits = 2)) %>% 
+  mutate(survey = "FAO/WFP")
+
+) %>% 
+  relocate(survey) %>% 
+  flextable() %>% 
+  theme_zebra() %>% 
+  set_table_properties(layout = "autofit") %>% 
+  set_caption("Percentage of surveyed population with borderline or poor FCS")
+   
+```
+
+
+<br><br><br>
+
+
+## 2. Education levels 
+
+```{r}
+
+mini %>% 
+  mutate(one = 1, 
+         count = sum(one), 
+         pc = round(
+           ifelse(one / count * 100 > 0, 
+                  one / count * 100, 
+                  0), 
+                    digits = 2)) %>% 
+  group_by(b_08) %>% 
+  summarise(pc = sum(pc)) %>%  
+  ggplot(aes(x = b_08, y = pc)) + 
+  geom_col(fill = "grey20") + 
+  geom_text(aes(label = pc), 
+            colour = "white",
+            size = 2.5, 
+            position = position_stack(vjust = .5)) +
+  scale_y_continuous(labels = comma) +  
+  scale_x_continuous(breaks = seq(0, 20, by = 2)) + 
+  labs(x = "Years of education", 
+       y = "Percent of households", 
+       title = "Years of education of MSNA respondents, unweighted", 
+       caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")
+```
+
+<br>
+
+Common stopping points are near the end of primary school and secondary school. At the right end of the plot, the university-educated population is a noticeable minority. 
+
+This corroborates with common understanding of the context in Myanmar and structure of the labour force. Education level is also one of the strongest predictors of resilience. 
+
+This added level of detail is immediately much more useful at identifying populations in need of assistance and what types of targeted support would improve their circumstances.  
+
+Bearing in mind that the food security monitoring survey is not an education tool, it is nevertheless imperative to make the best use of each question we ask and it is recommended that the FAO/WFP survey adopt MSNA convention for their survey. 
+
+<br>
+
+```{r}
+survey %>% 
+  select(survey_id, hoh_education) %>% 
+  mutate(value = 1, 
+         hoh_education = str_replace_all(hoh_education, 
+                                         "edu_", ""), 
+         hoh_education = fct_relevel(hoh_education, 
+                                     c("none", 
+                                       "primary", 
+                                       "secondary", 
+                                       "higher"))) %>% 
+  arrange(hoh_education) %>% 
+  filter(!is.na(hoh_education)) %>% 
+  ungroup() %>% 
+  group_by(hoh_education) %>% 
+  summarise(value = sum(value)) %>% 
+  mutate(pc = round(value / sum(value) * 100, 
+                    digits = 2)) %>% 
+  ggplot(aes(x = hoh_education, y = pc)) + 
+  geom_col(fill = "grey20") + 
+  geom_text(aes(label = pc), 
+            vjust = 1, 
+            colour = "white") +
+  scale_y_continuous(labels = comma) + 
+  labs(x = "Education level of household head", 
+       y = "Number of households", 
+       title = "Education level of household head, FAO/WFP survey round 3 2022")
+  
+```
+
+
+
+<br><br><br>
+
+## 3. Coefficient plots 
+
+```{r}
+mini %>% 
+  select(hhfcs_inv, education_level, physical_security, rural, 
+         natural_hazards, not_improved_floor, not_improved_water, 
+         not_improved_sanitation, not_improved_housing, 
+         physical_security) %>% 
+  # summarise_at(vars(hhfcs_inv:no_electricity), mean)
+  lm(hhfcs_inv ~ ., data = .) %>% 
+  tidy(conf.int = TRUE) %>% 
+  filter(term != "(Intercept)") %>%
+  mutate(term = fct_reorder(term, estimate)) %>% 
+  ggplot(aes(x = estimate, 
+             y = term, 
+             colour = estimate)) + 
+  geom_vline(xintercept = 0, lty = 2, colour = "red") + 
+  geom_point() + 
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), height = 0.2) +
+  scale_colour_viridis(option = "turbo") +
+  theme(legend.position = "none",
+          axis.text.y = element_text(size = 7),
+          axis.title.x = element_text(size = 7, face = "bold")) +
+  labs(x = "Estimate", y = "", 
+       title = "Coefficient plot, household FCS with selected indicators", 
+       caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")
+
+```
+
+<br>
+
+As expected, education levels would have the most positive impact on food consumption, whereas exposure to natural hazards consistently causes households to experience food insecurity. 
+
+There is a very wide range of responses to threats to physical security and this should be investigated further to break down the phenomenon. 
+
+Regarding a comparison with round 3 of FAO/WFP data, there are quite a few similarities -- access to safe drinking water is a stronger predictor of low food consumption scores in both. Likewise, the variable least associated with food insecurity would be high educational attainment. 
+
+
+<br>
+
+```{r}
+survey_mini %>%
+  left_join(survey %>% select(score = hhfcs_inv, survey_id), by = "survey_id") %>% 
+  select(-survey_id, -matches("cs_|fies_|fcs_"), -tot_income) %>%
+  lm(score ~ ., data = .) %>% 
+  tidy(conf.int = TRUE) %>% 
+  filter(term != "(Intercept)") %>%
+  filter(p.value <= .05) %>% 
+  mutate(term = fct_reorder(term, estimate)) %>% 
+  ggplot(aes(x = estimate, 
+             y = term, 
+             colour = estimate)) + 
+  geom_vline(xintercept = 0, lty = 2, colour = "red") + 
+  geom_point() + 
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), height = 0.2) +
+  scale_colour_viridis(option = "turbo") +
+  theme(legend.position = "none",
+          axis.text.y = element_text(size = 7),
+          axis.title.x = element_text(size = 7, face = "bold")) +
+  labs(x = "Estimate", y = "", 
+       title = "Coefficient plot, household FCS with selected indicators", 
+       caption = "FAO/WFP food security survey round 3 2022") 
+```
+
+<br><br><br>
+
+## 4. Conflict and insecurity
+
+```{r  fig.width=10, fig.height=10}
+
+ord <- c("Nay Pyi Taw",  "Bago", "Ayeyarwady", "Magway", "Shan (South)", "Tanintharyi",
+         "Shan (East)", "Mandalay", "Mon", "Rakhine", "Sagaing", "Shan (North)",
+         "Yangon",  "Kayin", "Chin", "Kachin", "Kayah")
+
+mini %>% 
+  group_by(state) %>% 
+  summarise(count = sum(count), 
+            insecure = sum(insecure)) %>% 
+  mutate(pc_insecure = round(insecure / count * 100, 
+                             digits = 2)) %>% 
+  ungroup() %>% 
+  mutate(state = fct_reorder(state, pc_insecure)) %>% 
+  ggplot(aes(x = pc_insecure, y = state)) + 
+  geom_col(fill = "grey70") + 
+  geom_text(aes(label = pc_insecure),
+            size = 2.5, 
+            colour = "black", hjust = 1) +
+  theme(legend.position = "none", 
+        plot.title = element_text(size = 11), 
+        axis.text.x = element_text(size = 8), 
+        plot.caption = element_text(hjust = .5)) +
+  labs(x = "Percentage of households", y = "", 
+       title = "Percentage of households who feel insecure, unweighted", 
+       caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")  + 
+  
+acled %>%
+  group_by(admin1) %>% 
+  summarise(fatalities = sum(fatalities)) %>% 
+  right_join(pin %>%
+               group_by(state) %>%
+               summarise(population = sum(population_2021_proj)), 
+             by = c("admin1" = "state")) %>% 
+  mutate(admin1 = recode(admin1, 
+                         "Bago (East)" = "Bago", 
+                         "Bago (West)" = "Bago")) %>% 
+  group_by(admin1) %>% 
+  summarise(population = sum(population), 
+            fatalities = sum(fatalities)) %>%
+  ungroup() %>% 
+  mutate(fatalities_pm = fatalities / population * 1000000, 
+         fatalities_pm = round(fatalities_pm, digits = 0),
+         admin1 = fct_relevel(admin1, ord)) %>% 
+  arrange(admin1) %>% 
+  ggplot(aes(x = fatalities_pm, y = admin1)) + 
+  geom_col(fill = "grey70") + 
+  geom_text(aes(label = comma(fatalities_pm, accuracy = 4)), 
+                size = 2.5, 
+                colour = "black", 
+                hjust = "inward") + 
+  theme(legend.position = "none", 
+        plot.title = element_text(size = 11), 
+        axis.text.x = element_text(size = 8), 
+        plot.caption = element_text(hjust = .5)) +
+  scale_x_continuous(labels = comma) + 
+  labs(x = "Conflict fatalities per million persons", 
+       y = "", 
+       title = "Conflict fatalities per million persons, as of 06-06-2022", 
+       caption = "ACLED; acleddata.com") + 
+  
+acled %>%
+  group_by(admin1) %>% 
+  filter(sub_event_type != "Peaceful protest") %>% 
+  summarise(events = n()) %>% 
+  right_join(pin %>%
+               group_by(state) %>%
+               summarise(population = sum(population_2021_proj)), 
+             by = c("admin1" = "state")) %>% 
+  mutate(admin1 = recode(admin1, 
+                         "Bago (East)" = "Bago", 
+                         "Bago (West)" = "Bago")) %>% 
+  group_by(admin1) %>% 
+  summarise(population = sum(population), 
+            events = sum(events)) %>%
+  ungroup() %>% 
+  mutate(events_pm = events / population * 1000000, 
+         events_pm = round(events_pm, digits = 0),
+         admin1 = fct_relevel(admin1, ord)) %>% 
+  arrange(admin1) %>% 
+  ggplot(aes(x = events_pm, y = admin1)) + 
+  geom_col(fill = "grey70") + 
+  geom_text(aes(label = comma(events_pm, accuracy = 4)), 
+                size = 2.5, 
+                colour = "black", 
+                hjust = "inward") + 
+  theme(legend.position = "none", 
+        plot.title = element_text(size = 11), 
+        axis.text.x = element_text(size = 8), 
+        plot.caption = element_text(hjust = .5)) + 
+  scale_x_continuous(labels = comma) + 
+  labs(x = "Conflict events per million persons", 
+       y = "", 
+       title = "Conflict events per million persons, as of 06-06-2022", 
+       caption = "ACLED; acleddata.com") +
+  
+  plot_layout(ncol = 2, 
+              heights = c(2, 2))
+```
+
+<br>
+
+As a caveat, this variable needs to be explored in much more depth, but a cursory glance at it shows that it squares with our understanding of where the conflict is most intense. The margin by which Nay Pyi Taw comes last after Ayeryarwady and Bago is a reassuring indicator of the quality of the data.
+
+Relatively high insecurity in places like Shan (North) and Kachin remind us that previously insecure places have not improved, instead it is instead that the rest of the country has lurched into open civil war. This, of course, forestalls the long-term investment and peacebuilding efforts that are necessary to stabilise the country. 
+
+As perhaps one final comparison with the FAO/WFP survey, the question there is: 
+
+>Has your household faced any particular disaster or crisis affecting your community or your household that affected your ability to raise an income and/or to produce food for self consumption in the last 3 months? 
+
+And the option is at the end of an admittedly long list and fatigue might have set in on either the enumerator's or the respondent's parts: 
+
+>22)Violence and insecurity / conflict
+
+In round 3, **10%** of persons who were exposed to violence, insecurity and conflict. Which is slightly different from the **19%** of persons who say that they feel "insecure" or "somewhat insecure" in the MSNA. Overall, I prefer the MSNA's approach since they have a dedicated question for insecurity. 
+
+
+```{r eval = FALSE}
+mini %>% 
+  summarise_at(vars(insecure, count), sum) %>% 
+  mutate(insecure / count) %>% 
+  mutate(pc_insecure = round(insecure / count, 
+                             digits = 2)) 
+
+survey %>% 
+  mutate(count = 1) %>% 
+  summarise_at(vars(shocks_conflict, count), sum) %>% 
+  mutate(shocks_conflict / count) %>% 
+  mutate(pc_insecure = round(shocks_conflict / count, 
+                             digits = 2))
+
+```
+
+

@@ -1,0 +1,1701 @@
+Variable Name,Variable Label,Answer Label,Answer Code,Variable Type
+hhid,Household ID,Open ended,,long
+hhweight,Household Weight,Open ended,,Numeric
+ppweight,Population Weight,Open ended,,Numeric
+adweight,Adult Population Weight,Open ended,,Numeric
+a_02,A.02. Enumerator name and code,Open ended,,Numeric
+a_04,A.04. Interview Date,Open ended,,Numeric
+b_01,B.01. Are you between 18 years and 74 years old?,,,Numeric
+,,Yes,1,
+,,No,2,
+b_02,B.02. Do you agree to participate in this interview?,,,Numeric
+,,Yes,1,
+,,No,2,
+b_04,B.04. Are you male or female?,,,Numeric
+,,Male,1,
+,,Female,2,
+b_05,B.05. How old are you? (in years),Open ended,,Numeric
+b_06,B.06. Which State/Region do you live in?,,,Integer
+,,Kachin,1,
+,,Kayah,2,
+,,Kayin,3,
+,,Chin,4,
+,,Sagaing,5,
+,,Tanintharyi,6,
+,,Bago,7,
+,,Magway,8,
+,,Mandalay,9,
+,,Mon,10,
+,,Rakhine,11,
+,,Yangon,12,
+,,Ayeyawady,14,
+,,Nay Pyi Taw,15,
+,,Shan (North),131,
+,,Shan (East),132,
+,,Shan (South),133,
+b_07,B.07. Do you live in a village tract (rural) or ward (urban)?,,,Numeric
+,,village tract (rural),1,
+,,ward (urban),2,
+b_08,B.08. What is the highest level of education that you have completed?,,,Numeric
+,,None,0,
+,,Grade 1(Standard 0),1,
+,,Grade 2(Standard 1),2,
+,,Grade 3(Standard 2),3,
+,,Grade 4(Standard 3),4,
+,,Grade 5(Standard 4),5,
+,,Grade 6(Standard 5),6,
+,,Grade 7(Standard 6),7,
+,,Grade 8(Standard 7),8,
+,,Grade 9(Standard 8),9,
+,,Grade 10(Standard 9),10,
+,,Grade 11(Standard 10),11,
+,,THS – Technical high school (After Std 8),12,
+,,Teachers Certificate (After Std 10),13,
+,,"TVET Diploma (GTI, GTC etc.)",14,
+,,Undergraduate/Community College Diploma,15,
+,,Bachelor Graduate,16,
+,,Postgraduate Diploma,17,
+,,Master’s Degree,18,
+,,Ph D,19,
+,,Monastery/Religious School,20,
+,,KG Completed (2016-17 new system),21,
+,,Other (….Specify),9999,
+b_09,B.09. Did any member of your household harvest any crops in the past 12 months? ,,,Numeric
+,,Yes,1,
+,,No,2,
+c_01,C.01. How many children between 0 and 4 years of age live in this household?,Open ended,,Numeric
+c_02,C.02. How many children between 5 and 14 year old live in this household?,Open ended,,Numeric
+c_03,C.03. How many female adults live in your household aged 15-64? Please include y,Open ended,,Numeric
+c_04,C.04. How many male adults live in your household aged 15-64? Please include you,Open ended,,Numeric
+c_05,C.05. How many female adults live in your household aged 65 years or older? Plea,Open ended,,Numeric
+c_06,C.06. How many male adults live in your household aged 65 years or older? Please,Open ended,,Numeric
+c_07,C.07. What is your relationship to the household head?,,,Numeric
+,,head,1,
+,,spouse,2,
+,,son / daughter,3,
+,,son-in-law / daughter-in-law,4,
+,,grandchild / great grand child,5,
+,,parent / parent-in-law,6,
+,,brother or sister,7,
+,,grand-parent,8,
+,,"adopted, foster or stepchild",9,
+,,other relative,10,
+,,domestic worker,11,
+,,not related,12,
+c_08,C.08. What is your marital status?,,,Numeric
+,,single,1,
+,,married,2,
+,,widowed,3,
+,,divorced/separated,4,
+d_01,Numeric township code ,,,long
+d_04,d.04 How long have you lived in this village tract/ ward?___in years,Open ended,,Numeric
+d_05,d.05 Can you tell us the month and year in which you moved to this current villa,Open ended,,Numeric
+d_06,D.06. In which State/Region was your previous (most recent) residence?,Open ended,,String
+d_06_oth,D.06. abroad (specify country) English,,,Numeric
+,,America,1,
+,,Thailand,2,
+d_07,D.07. In which township was your previous (most recent) residence?,Open ended,,String
+d_08,D.08. Was your previous (most recent) residence in a rural area or urban area?,,,Numeric
+,,rural,1,
+,,urban,2,
+d_09_01,d_09_01.Employment of respondent: insufficient work or income in previous locati,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_02,d_09_02.Employment of respondent:job opportunity in current location,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_03,d_09_03.Employment of other household members:insufficient work or income in pre,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_04,d_09_04.Employment of other household members: job opportunity in current locati,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_05,"d_09_05.Reasons for relocation:Employment: other, related to employment",,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_06,d_09_06.Education opportunities,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_07,d_09_07.Marriage,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_08,d_09_08.To give support to family,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_09,d_09_09.To get support from family,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_10,d_09_10.Avoid conflict / improve physical security,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_11,d_09_11.Reduce risk of contracting COVID-19,,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_99,d_09_99.other (specify),,,Numeric
+,,Yes,1,
+,,No,2,
+d_09_oth,D.09. Other Specify (English),,,Numeric
+,,We Bought a house/ we bought a new house/ We just got our own house,12,
+,,To stay close with our friends,13,
+,,Because city development committee no longer lease the land,14,
+,,Since the house rent is due,15,
+,,Because the house was sold,16,
+,,Since the previous house was damaged by fire,17,
+,,Due to the HEALTH (as the current place is close to clinic and hospital),18,
+,,Due to a DIVORCE,19,
+,,Had to move from staff housing as I am CDMer,20,
+,,Since the illegal hosues were destoryed,21,
+d_10,D.10. For how long do you plan to stay in your current village tract/ward?,,,Integer
+,,One month or less,1,
+,,1-6 months,2,
+,,More than 6 months,3,
+,,Permanently,4,
+,,Don’t know,9998,
+e_01,E.01. What type of dwelling do you currently live in?,,,Integer
+,,wooden house,1,
+,,bamboo house (lifespan of house is > 3 years),2,
+,,semi-pucca house (mix brick-wood),3,
+,,bungalow/ brick house,4,
+,,apartment/ condominium,5,
+,,hut (2-3 years),6,
+,,hut (1 year),7,
+,,other (specify),9999,
+e_01_oth,E.01. Other (specify) English,,,Numeric
+,,Container Home,8,
+e_02,"E.02. Is the dwelling owned, rented, or provided free by a company or individual",,,Numeric
+,,owned,1,
+,,rented,2,
+,,"provided free (from relative, individual,company or government)",3,
+,,squatter,4,
+,,IDP camp / temporary shelter,5,
+,,other (specify),9999,
+e_03,"E.03 Does your dwelling have a floor made from wood, carpet, tile, vinyl or othe",,,Numeric
+,,Yes,1,
+,,No,2,
+e_04,"E.04. How many rooms do the members of your household occupy, including bedrooms",Open ended,,Numeric
+e_05,E.05. What is your current main source of drinking water?,,,Integer
+,,piped into dwelling/ yard,1,
+,,public tap/standpipe,2,
+,,tube well or borehole,3,
+,,protected well or spring or pond,4,
+,,rainwater,5,
+,,bottled water / sachets,6,
+,,unprotected well or spring or pond,7,
+,,tanker truck or cart with small tank,8,
+,,surface water,9,
+,,Water purifier machine,10,
+,,Other(specify),9999,
+e_05_oth,E.05. Other Specify (English),,,Numeric
+,,Public water purifier/ Have to go and get water from the water purifier provided by the factory,10,
+e_06,E.06. What kind of toilet facility do members of your household usually use?,,,Numeric
+,,flush toilet,1,
+,,pit latrine with concrete floor/slab (improved),2,
+,,pit latrine with open pit (dirt floor),3,
+,,"other toilet (bucket toilet, hanging toilet/latrine)",4,
+,,no facility / bush/ field,5,
+,,other (specify),9999,
+e_07,E.07 What is the main source of electricity?,,,Integer
+,,Government/national grid,1,
+,,Border country grid,2,
+,,Through a transformer/generator purchased by the community,3,
+,,Mini-grid/micro-grid solar (community-based),4,
+,,Household owned transformer or generator,5,
+,,Solar home system,6,
+,,Rechargeable battery system,7,
+,,Water mill,8,
+,,no electricity,9,
+,,Private company/generator,10,
+,,Other (specify),9999,
+e_07_oth,E.07 Other Specify (English),,,Numeric
+,,"Private power supply (get electricity from Phoe Thee Cho, TTC and Petrol Company)",10,
+e_08,E.08. a rice cooker?,,,Numeric
+,,Yes,1,
+,,No,2,
+e_09,E.09. a fridge?,,,Numeric
+,,Yes,1,
+,,No,2,
+e_10,E.10. a TV?,,,Numeric
+,,Yes,1,
+,,No,2,
+e_11,E.11. a wardrobe?,,,Numeric
+,,Yes,1,
+,,No,2,
+e_12,"E.12. a car, motorcycle, scooter/moped, tuk-tuk (mechanized rickshaw), or motori",,,Numeric
+,,Yes,1,
+,,No,2,
+e_13,"E.13. a working computer, laptop, I-pad, kindle or similar device?",,,Numeric
+,,Yes,1,
+,,No,2,
+e_14,E.14. How many working mobile phones are owned in total by members of your house,Open ended,,Numeric
+e_15,E.15. Do you or any other household members own any agricultural land? (crop lan,,,Numeric
+,,Yes,1,
+,,No,2,
+e_16,E.16. What is the total acreage of agricultural land owned by any of your househ,,,Integer
+,,..........acres,1,
+,,..........Length ..........Width,2,
+,,don’t know,9998,
+e_16_acres,E.16 ______acres,Open ended,,double
+e_16_length,E.16 Length ______Length,Open ended,,Integer
+e_16_width,E.16 ______Width,Open ended,,Integer
+f_01_01,F.01.1. Wage employment,,,Numeric
+,,Yes,1,
+,,No,2,
+f_01_02,F.01.2.Salaried employment,,,Numeric
+,,Yes,1,
+,,No,2,
+f_01_03,F.01.3. Own or household crop farm (seasonal and perennial crops),,,Numeric
+,,Yes,1,
+,,No,2,
+f_01_04,F.01.4. Own or household livestock business,,,Numeric
+,,Yes,1,
+,,No,2,
+f_01_05,F.01.5. Own or household fishing or aquaculture business,,,Numeric
+,,Yes,1,
+,,No,2,
+f_01_06,F.01.6. Own or a household non-farm enterprise (including any small business act,,,Numeric
+,,Yes,1,
+,,No,2,
+f_01_07,F.01.7. No employment,,,Numeric
+,,Yes,1,
+,,No,2,
+f_02_01,F.02.1. Crop farming (seasonal and perennial crops),,,Numeric
+,,Yes,1,
+,,No,2,
+f_02_02,F.02.2. Livestock raising,,,Numeric
+,,Yes,1,
+,,No,2,
+f_02_03,F.02.3. Fishing or aquaculture,,,Numeric
+,,Yes,1,
+,,No,2,
+f_02_04,F.02.4. Non-agricultural activities,,,Numeric
+,,Yes,1,
+,,No,2,
+f_03_01,F.03.1. Crop farming (seasonal and perennial crops),,,Numeric
+,,Yes,1,
+,,No,2,
+f_03_02,F.03.2. Livestock raising,,,Numeric
+,,Yes,1,
+,,No,2,
+f_03_03,F.03.3. Fishing or aquaculture,,,Numeric
+,,Yes,1,
+,,No,2,
+f_03_04,F.03.4. Non-agricultural activities,,,Numeric
+,,Yes,1,
+,,No,2,
+f_04,F.04. What was your main occupation in the past 30 days?,,,Numeric
+,,wage employment,1,
+,,salaried employment,2,
+,,work on the own or household crop farm (seasonal and perennial crops),3,
+,,work on own or household livestock business,4,
+,,work on own or household fishing or aquaculture business,5,
+,,work in own or a household non-farm enterprise (including any small business activities),6,
+,,{F_01_9999_OT_SP},9999,
+f_05_01,F.05.1. Not interested / no need to work / no time to work,,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_02,F.05.2. Slack season,,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_03,F.05.3. Could not find anyone to hire me,,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_04,"F.05.4. Ill, too old",,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_05,F.05.5. Need to take care of children or other family members,,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_06,F.05.6. Not able to go to work due to movement restrictions,,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_07,F.05.7. Not safe to go to work due to violence / conflict,,,Numeric
+,,Yes,1,
+,,No,2,
+f_05_08,F.05.8. Not safe to go to work due to health reasons,,,Numeric
+,,Yes,1,
+,,No,2,
+f_06,F.06. Are you the main income earner in your household?,,,Numeric
+,,yes (only one),1,
+,,"Yes, jointly with another person",2,
+,,No,3,
+g_01_01,G.01.1. Wage work– crop farming,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_02,G.01.2. Wage work– livestock,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_03,G.01.3. Wage work – fishing/aquaculture,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_04,G.01.4. Wage work – non-agriculture,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_05,G.01.5. Salaried work– crop farming,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_06,G.01.6. Salaried work– livestock,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_07,G.01.7. Salaried work – fishing/aquaculture,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_08,G.01.8. Salaried work– non-agriculture,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_09,G.01.9. Own or household crop farm (seasonal and perennial crops),,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_10,G.01.10. Own or household livestock business,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_11,G.01.11. Own or household fishing or aquaculture business,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_12,G.01.12. Own or a household non-farm enterprise (including any small business ac,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_13,G.01.13. Renting out of land / properties …,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_14,"G.01.14. Gifts, donations, pensions, assistance",,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_15,G.01.15. Remittances,,,Numeric
+,,Yes,1,
+,,No,2,
+g_01_16,G.01.16. No employment or no income,,,Numeric
+,,Yes,1,
+,,No,2,
+g_02,"G.02.  In the past three months, what was the most important source of income in",,,Numeric
+,,wage work– crop farming,1,
+,,wage work– livestock,2,
+,,wage work – fishing/aquaculture,3,
+,,wage work – non-agriculture,4,
+,,salaried work– crop farming,5,
+,,salaried work– livestock,6,
+,,salaried work – fishing/aquaculture,7,
+,,salaried work– non-agriculture,8,
+,,work on the own or household crop farm (seasonal and perennial crops),9,
+,,own or household livestock business,10,
+,,own or household fishing or aquaculture business,11,
+,,own or a household non-farm enterprise (including any small business activities),12,
+,,renting out of land / properties,13,
+,,"gifts, donations, pensions, assistance",14,
+,,remittances,15,
+g_03,"G.03. In the past three months, how many household members have engaged in incom",Open ended,,Numeric
+g_04_01,"G.04.1. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_02,"G.04.2. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_03,"G.04.3. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_04,"G.04.4. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_05,"G.04.5. In the past month, how much income did you and any other household membe",,,Numeric
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_06,"G.04.6. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_07,"G.04.7. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_08,"G.04.8. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_09,"G.04.9. In the past month, how much income did you and any other household membe",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_10,"G.04.10. In the past month, how much income did you and any other household memb",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_10_in_lakh,G_04_10_in_Lakh. Income from own or household livestock business,Open ended,,double
+g_04_10_in_mmk,G_04_10_in_MMK. Income from own or household livestock business,Open ended,,long
+g_04_11,"G.04.11. In the past month, how much income did you and any other household memb",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_11_in_lakh,"G.04.11. In the past month, how much income did you and any other household memb",Open ended,,double
+g_04_11_in_mmk,G_04_11_in_MMK1. Income from own or household fishing or aquaculture business,Open ended,,long
+g_04_12,"G.04.12. In the past month, how much income did you and any other household memb",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_12_in_lakh,G_04_12_in_Lakh. Income from own or a household non-farm enterprise (including a,Open ended,,double
+g_04_12_in_mmk,G_04_12_in_MMK. Income from own or a household non-farm enterprise (including an,Open ended,,long
+g_04_13,"G.04.13. In the past month, how much income did you and any other household memb",,,Integer
+,,______in MMK,1,
+,,______in Lakh,2,
+,,prefer not to say,9997,
+,,Don’t know.,9998,
+g_04_13_in_lakh,G_04_13_in_Lakh. Income from renting out of land / properties … ,Open ended,,double
+g_04_13_in_mmk,G_04_13_in_MMK. Income from renting out of land / properties …,Open ended,,long
+g_04_1_in_lakh,G_04_1_in_Lakh. Income from wage work– crop farming,Open ended,,double
+g_04_1_in_mmk,G_04_1_in_MMK. Income from wage work– crop farming,Open ended,,long
+g_04_2_in_lakh,G_04_2_in_Lakh. Income from wage work– livestock,Open ended,,double
+g_04_2_in_mmk,G_04_2_in_MMK. Income from wage work– livestock,Open ended,,long
+g_04_3_in_lakh,G_04_3_in_Lakh. Income from wage work – fishing/aquaculture,Open ended,,double
+g_04_3_in_mmk,G_04_3_in_MMK. Income from wage work – fishing/aquaculture,Open ended,,long
+g_04_4_in_lakh,G_04_4_in_Lakh. Income from wage work – non-agriculture,Open ended,,double
+g_04_4_in_mmk,G_04_4_in_MMK. Income from wage work – non-agriculture ,Open ended,,long
+g_04_5_in_lakh,G_04_5_in_Lakh. Income from salaried work– crop farming,Open ended,,double
+g_04_5_in_mmk,G_04_5_in_MMK. Income from salaried work– crop farming ,Open ended,,long
+g_04_6_in_lakh,G_04_6_in_Lakh. Income from salaried work– livestock,Open ended,,double
+g_04_6_in_mmk,G_04_6_in_MMK. Income from salaried work– livestock,Open ended,,long
+g_04_7_in_lakh,G_04_7_in_Lakh. Income from salaried work – fishing/aquaculture,Open ended,,double
+g_04_7_in_mmk,G_04_7_in_MMK. Income from salaried work – fishing/aquaculture,Open ended,,long
+g_04_8_in_lakh,G_04_8_in_Lakh. Income from salaried work– non-agriculture,Open ended,,double
+g_04_8_in_mmk,G_04_8_in_MMK. Income from salaried work– non-agriculture,Open ended,,long
+g_04_9_in_lakh,G_04_9_in_Lakh. Income from work on the own or household crop farm (seasonal and,Open ended,,double
+g_04_9_in_mmk,G_04_9_in_MMK. Income from work on the own or household crop farm (seasonal and ,Open ended,,long
+g_05,G.05. G.05 When considering your total household income of the past three months,,,Integer
+,,No change,0,
+,,Small decrease in income (1-20% reduction),1,
+,,High decrease in income (>20% reduction),2,
+,,Small increase in income (1-20% higher),3,
+,,High increase in income (>20% higher),4,
+,,Do not know,9997,
+,,prefer not to say,9998,
+g_06_01,G.06.1. Reduced working hours / less work,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_02,G.06.2. Low/reduced wages,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_03,G.06.3. Not safe to travel to work location,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_04,G.06.4. Not able to reach work location,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_05,G.06.5. Not safe at work location,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_06,G.06.6. Unable to work due to health problems of worker or other household membe,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_99,g.06.99. Other,,,Numeric
+,,Yes,1,
+,,No,2,
+g_06_oth,g.06.99. Other(Specify),,,Numeric
+,,Stressful at work by being bullied. (being oppressed),7,
+,,Being oppressed at workplace/ stressful due to discrimination at work,8,
+,,Too many working hours/ Many working hours (from 8 to 6)/ many pressure at work,9,
+,,Do not get along well with the colleagues,10,
+,,"My job is to ask for money to people who take loan. So, it is really difficult to get money from them when it is time.",11,
+,,Less of experience is the problem,12,
+,,We aren’t paid at the end of the month. It is hard for us since we get paid only after 8/9th days of the month.,13,
+,,Irregular power supply (as I have to work online),14,
+,,There was heavy raining so I had to walk on the flooded road,15,
+,,"For me, it is not convenient to work among girls.",16,
+,,Less of experience is the problem,17,
+,,Late payment/ Wages are not paid,18,
+,,Not paid the daily wages at once.,19,
+,,"when going to work, not having a motorcycle is a problem.",20,
+g_07,G.07 How many acres did you cultivate in paddy in the 2021 monsoon season?,,,double
+,,Don't Know,9998,
+g_08,g.08 How much paddy did you harvest or expect to harvest in the 2021 monsoon sea,Open ended,,Numeric
+g_08_unit,G.08 How much paddy did you harvest or expect to harvest in the 2021 monsoon sea,,,Integer
+,,baskets,1,
+,,pone,2,
+,,Rakhine basket,3,
+,,don’t know,9998,
+,,other unit (specify),9999,
+g_09,G.09 How does your paddy harvest in this last monsoon compare to production in t,,,Integer
+,,Much lower (>20% lower),1,
+,,Somewhat lower (1-20% lower),2,
+,,About the same,3,
+,,Somewhat higher (1-20% higher),4,
+,,much higher (>20% higher),5,
+,,Don’t know,9998,
+g_10,G.10 How many acres did you cultivate in maize in this year’s (2021) monsoon sea,,,double
+,,don’t know,9998,
+g_11,g.11 How much maize did you harvest or expect to harvest this year's 2021 monsoo,Open ended,,Numeric
+g_11_unit,G.11 How much maize did you harvest or expect to harvest this year’s 2021 monsoo,,,Integer
+,,Viss,1,
+,,pone,2,
+,,don’t know,9998,
+,,other unit (specify),9999,
+g_12,G.12 How does your maize harvest in this last monsoon compare to production in t,,,Integer
+,,Much lower (>20% lower),1,
+,,Somewhat lower (1-20% lower),2,
+,,About the same,3,
+,,Somewhat higher (1-20% higher),4,
+,,much higher (>20% higher),5,
+,,Don’t know,9998,
+g_13,"G.13 In the last three months, what is the most important challenge you experien",,,Numeric
+,,no difficulties,0,
+,,unable to acquire enough inputs or mechanization services (availability),1,
+,,high prices of inputs or mechanization services,2,
+,,high prices of fuel,3,
+,,"disruption to banking services, access to cash, or loan",4,
+,,I cannot reach my own farm,5,
+,,water / irrigation supply problems,6,
+,,weather problems,7,
+,,pest and disease problems,8,
+,,difficulties hiring workers,9,
+,,other (specify),9999,
+g_14,"G.14 In the last three months, what is the most important challenge you experien",,,Integer
+,,no difficulties,0,
+,,low prices for crops,1,
+,,high price of fuel / high transportation cost,2,
+,,payment problems,3,
+,,markets are closed,4,
+,,not many traders,5,
+,,buyers or traders cannot reach the farm or I cannot reach them,6,
+,,not applicable,9996,
+,,other (specify),9999,
+g_15,"G.15 In the last three months, what is the most important challenge you experien",,,Numeric
+,,no difficulties,0,
+,,"unable to acquire enough inputs (availability of feed, animals, medicine, etc.)",1,
+,,"high prices of inputs (animal feed, animals, medicine, etc)",2,
+,,"disruption to banking services,  access to cash or loans",3,
+,,I cannot reach my livestock,4,
+,,electricity / energy supply problems,5,
+,,water / irrigation supply problems,6,
+,,difficulties hiring workers,7,
+,,sickness or death of animals,8,
+,,other (specify),9999,
+g_16,"G.16 In the last three months, what is the most important challenge you experien",,,Numeric
+,,no difficulties,0,
+,,low prices for livestock or livestock products,1,
+,,high price of fuel / high transportation cost,2,
+,,payment problems,3,
+,,markets are closed,4,
+,,not many traders,5,
+,,buyers or traders cannot reach the farm or I cannot reach them,6,
+,,other (specify),9999,
+g_17,"G.17 In the last three months, which was the main challenge you had for doing yo",,,Integer
+,,no difficulties,0,
+,,"unable to acquire enough inputs (availability of feed, fingerlings, medicine, etc)",1,
+,,"high prices of inputs (fish feed, fingerlings / young fish, medicine etc)",2,
+,,"disruption to banking services, access to cash or loans",3,
+,,I cannot reach my fish pond / fishing location,4,
+,,high price of fuel,5,
+,,electricity / energy supply problems,6,
+,,water / irrigation supply problems,7,
+,,difficulties hiring workers,8,
+,,not applicable,9996,
+,,other (specify),9999,
+g_17_oth,G.17 Other (specify) English,,,Numeric
+,,I have to pay taxes. It is a difficult for me.,9,
+g_18,"G.18 In the last three months, which was the main challenge you had for selling ",,,Integer
+,,no difficulties,0,
+,,low prices for fish or fish products,1,
+,,high price of fuel / high transportation cost,2,
+,,payment problems,3,
+,,markets are closed,4,
+,,not many traders,5,
+,,buyers or traders cannot reach me or I cannot reach them,6,
+,,not applicable,9996,
+,,other (specify),9999,
+h_01_01,H.01.1 food or agriculture related business,,,Numeric
+,,Yes,1,
+,,No,2,
+h_01_02,"H.01.2 other non-agriculture, non-food business",,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_01,H.02. Which kind of food / crop related businesses? : mobile food vendor (unprep,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_02,H.02. Which kind of food / crop related businesses? : fixed food vendor (unprepa,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_03,"H.02. Which kind of food / crop related businesses? : Food (crop, fish, meat) tr",,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_04,H.02. Which kind of food / crop related businesses? : Rice miller,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_05,H.02. Which kind of food / crop related businesses? : other food processing (oil,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_06,H.02. Which kind of food / crop related businesses? : transport of agricultural ,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_07,H.02. Which kind of food / crop related businesses? : selling prepared food/drin,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_08,H.02. Which kind of food / crop related businesses? : food delivery business (sh,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_09,H.02. Which kind of food / crop related businesses? : Agricultural input supplie,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_10,H.02. Which kind of food / crop related businesses? : Agricultural machinery dea,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_11,H.02. Which kind of food / crop related businesses? : Agricultural service provi,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_12,H.02. Which kind of food/ crop related businesses? : betel nut kiosk,,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_99,H.02. Which kind of food / crop related businesses? : other (specify),,,Numeric
+,,Yes,1,
+,,No,2,
+h_02_oth,H.02.9999. Other Specify (English),,,Numeric
+,,Selling betel/ Betel Shop,12,
+,,Selling betel/ Betel Wholesaler,13,
+,,Pig farming,14,
+,,(Selling Betel nut/ sale exclusively for betel nut),15,
+h_03,H.03 In the last three months which was the main challenge you had for doing bus,,,Integer
+,,no difficulties,0,
+,,unable to acquire enough raw materials / supplies (availability),1,
+,,high prices of raw materials or supplies,2,
+,,high prices of fuel / high transport costs,3,
+,,"disruption to banking services, access to cash or loans",4,
+,,customers cannot reach my business or I cannot reach customers,5,
+,,electricity / energy supply problems,6,
+,,fewer / no customers interested in buying products,7,
+,,difficulties hiring workers,8,
+,,difficult to reclaim debts/customers purchase more on credit,9,
+,,reduce operation hours,10,
+,,difficult to find a place to operate,11,
+,,losses in profit due to high rate of return,12,
+,,unskillful in this business,13,
+,,other (specify),9999,
+h_03_oth,h.03.99 Other(Specify),,,Numeric
+,,security concern,11,
+,,time limitation,12,
+,,time limitation due to martial law,13,
+,,consumer debt,14,
+,,transportation difficulty because lack of motorcycle licence  / because motorcycle was maintained,15,
+,,waste of goods due to difficulty in transportation,16,
+,,difficult to find a place for shop / shops are instructed to close down and move,17,
+,,cannot go to town due to racial discrimination,18,
+,,security concern due to political situation,19,
+,,Less of experience is the problem,20,
+,,Sales decline due to timely opening in the market,21,
+,,Increase losses. A lot of return from customer due to increasing fake products.,22,
+h_04_oth,h.04.99 Other(Specify),,,Integer
+,,Ayeyar Shwesin,1,
+,,Ayeyar Min (San Lone Shay),2,
+,,Ayeyar Padaythar (Myo Ma Thant),3,
+,,U Ye Myint San Kyan,4,
+,,Oh Pyae,5,
+,,Ok Ni,6,
+,,Aein Shin Ma,7,
+,,A Shay,8,
+,,Anyar Thar,9,
+,,A Seik,10,
+,,Inn Lel,11,
+,,A Chon,12,
+,,Thu Kha Thit,13,
+,,Thu Kha Tun,14,
+,,Thiri Marlar,15,
+,,Thee Mhae San,16,
+,,Thein Mar,17,
+,,Thwal Lay,18,
+,,Thapyay Tann,19,
+,,Thinn Thwel,20,
+,,Thet Ngal San,21,
+,,Wa Zi Yar,22,
+,,Hla Thway Kywal,23,
+,,Lal San,24,
+,,Lin Lin,25,
+,,lat Thel Kyan,26,
+,,Sinn Thu Kha,27,
+,,Yay Sinn,28,
+,,Yayy Kyar,29,
+,,Yoe Ni,30,
+,,Yate Khar San ( Tat Htoke San),31,
+,,Yar Gu gyi,32,
+,,Shan San,33,
+,,Shin Tone,34,
+,,Shwe Ayeyar,35,
+,,Shwe At,36,
+,,Shwe Thwel Htun San = Shwe Thwel,37,
+,,Shwe war tun san lone shay,38,
+,,Shwebo Manaw = Shwe Bo,39,
+,,Shwe Nat Thar,40,
+,,Shwe Ta Sote,41,
+,,Shwe Ngar,42,
+,,Shwe Kyi Thuza,43,
+,,Yangon Mal,44,
+,,yadanar toe,45,
+,,Yat 1 yar (San Kyan),46,
+,,Yat 90 San,47,
+,,Yat 80 San,48,
+,,Yat 100 San,49,
+,,Moe Cho San,50,
+,,Hmawbi Shal,51,
+,,Mhan Khar San,52,
+,,Mhway San,53,
+,,Myay Htine Thukha,54,
+,,Mhee tonee,55,
+,,Ma Yinn San,56,
+,,Myoe Pwar San,57,
+,,Manaw Phyud (San Kyann)/ Manaw Phyu,58,
+,,Manaw Sinn Sinn,59,
+,,Ma nyin,60,
+,,Ma Kyan Taw/ Ma Kyan,61,
+,,Bayy Kyar,62,
+,,Bywat Htun,63,
+,,Paw San Salat Kyoe,64,
+,,Paw San Kyan,65,
+,,Pathein Ziyar,66,
+,,Pyo Lay Khae,67,
+,,Pa Khan,68,
+,,Nhan Sar,69,
+,,Hnin Khin,70,
+,,Nhan Khar San (Yat 90 San),71,
+,,Nagar Min,72,
+,,Day Tha San,73,
+,,Thai San Kout,74,
+,,Htun gyi,75,
+,,Taung Pyan,76,
+,,Tayoke San,77,
+,,Ziyar/ Ziyar San/ Ziyar Shal,79,
+,,Zalat Kyoe,80,
+,,Zalat Kyi,81,
+,,San Wah,82,
+,,San Lone Shay (Unknown rice)/ San Shay,83,
+,,San Shay Kayin Lay,84,
+,,San Mar,85,
+,,San Hmway,86,
+,,San Ni,87,
+,,San Kout,88,
+,,San Kyan (Ziyar)/ San Kyan,89,
+,,Sinn thwel Lat/ Sinn Thwel,90,
+,,Sinn tone,91,
+,,Super,92,
+,,San See Ywat Hlay,93,
+,,Ngway toe,94,
+,,Nga Kyouk San,95,
+,,Japan Shwe wah tun,96,
+,,Khouk Mee Koot,97,
+,,Khine Shwe Wah,98,
+,,Chin Tone,99,
+,,Chin San,100,
+,,Chan Thar Thukha,101,
+,,Kout Pway,102,
+,,Kout Kyi,103,
+,,Kyaw Zayya Amar San,104,
+,,Kyouk Sel Padaythar,105,
+,,Kamar Kyi,106,
+,,Zeyar,107,
+,,Wan Tan,108,
+,,Aung Sat Kyar,109,
+h_04_price,Price of 1 pyi of long-grain rice,Open ended,,Numeric
+h_04_short_price,short-grain varieties' prices miscoded in H_04,Open ended,,Numeric
+h_04_short_variety,short-grain varieties miscoded in H_04,,,Numeric
+,,Pawsan,1,
+,,Ngakywe,2,
+,,Meedone,3,
+h_04_variety,Variety of long-grain rice,,,Integer
+,,Emata,1,
+,,Ngasein,2,
+,,Manathukha,3,
+,,Don’t know,9998,
+,,Other,9999,
+h_05_long_price,long-grain varieties prices miscoded in H_05,Open ended,,Numeric
+h_05_long_variety,long-grain varieties miscoded in H_05,Open ended,,Numeric
+h_05_oth,h.05.99 Other(Specify),,,Numeric
+,,Ayeyarwady San,1,
+,,Ayeyar Lin,2,
+,,Ayeyar Min San/ Ayeyar Min,3,
+,,Ayeyarpadaythar/ Ayeyarpadaythar (myo thit),4,
+,,Ayeyarmin,5,
+,,Alat Sar,6,
+,,Achon San,7,
+,,Thukha Shal,8,
+,,Thiha Aung San,9,
+,,Won Gyi San,10,
+,,Lode Thwel Mhway,11,
+,,Shan San chaw,12,
+,,Shwe Thwel Lay,13,
+,,Shwe Thwel Yin,14,
+,,Shwe Yin Aye,15,
+,,Shwe Bo Ma Naw,16,
+,,Shwe Bo Khon Ni/ Shwe Bo,17,
+,,Yat 90 San,18,
+,,Hmawbi San,19,
+,,Ma Gyan Taw San,20,
+,,Bay Gyar Taung Pyan/ Taung Pyan Bayy Gyar,21,
+,,Phan Thee Shal,22,
+,,Pa Day Thar,23,
+,,Pathein,24,
+,,Pwint Phyu Thu Kha,25,
+,,Pa Khan/ Pa Khan Shay,26,
+,,Nay Pyi Taw,27,
+,,Taung Pyan,28,
+,,Tayote Hmway,29,
+,,Ziyar,30,
+,,Zabu Hein,31,
+,,San Anaytaw,32,
+,,San Thit,33,
+,,San Hmway,34,
+,,San Chaw,35,
+,,Sinn Thukha,36,
+,,Sat Chon,37,
+,,Ngway Toe,38,
+,,Nga Kyi Ni,39,
+,,Japan Shal,40,
+,,Khon Ni San,42,
+,,Chin Tone,43,
+,,Kout Gyi San,44,
+,,Kyar Pyan,45,
+,,Kamar Chi,46,
+,,Kamar Wat,47,
+h_05_price,Price of 1 pyi of short-grain rice,Open ended,,Numeric
+h_05_variety,Variety of short-grain rice,,,Integer
+,,Pawsan,1,
+,,Nga Kywe,2,
+,,Meedone,3,
+,,Don’t know,9998,
+,,Other,9999,
+h_06,H.06 What is the current price of 1 Viss/ 10 kyatthar of the cheapest potatoes a,,,Integer
+,,Don't Know,9998,
+h_06_unit,H.06. Potatoes Unit Code,,,Numeric
+,,1 Viss,1,
+,,10 kyatthar,2,
+h_07,H.07 What is the current price of  1 Viss/10 kyatthar of the cheapest pulses ava,,,Integer
+,,Lentils,1,
+,,Lablab,2,
+,,butter beans,3,
+,,soybeans,4,
+,,chickpeas,5,
+,,green peas (Pe Pyot),6,
+,,Don’t know,9998,
+,,Other,9999,
+h_07_01,H.07.1. Lentils ___ kyat (1 viss/10 kyatthar) (1 can/1 pyi),Open ended,,Integer
+h_07_02,H.07.2. Lablab ___kyat (1 viss/10 kyatthar) (1 can/1 pyi),Open ended,,Integer
+h_07_03,H.07.3. butter beans___kyat (1 viss/10 kyatthar) (1 can/1 pyi),Open ended,,Integer
+h_07_04,H.07.4. soybeans___Kyat (1 viss/10 kyatthar) (1 can/1 pyi),Open ended,,Integer
+h_07_05,H.07.5. chickpeas___Kyat (1 viss/10 kyatthar) (1 can/1 pyi),Open ended,,Integer
+h_07_06,H.07.6. green peas (Pe Pyot) ___Kyat(1 viss/10 kyatthar) (1 can/1 pyi),Open ended,,Integer
+h_07_oth,h.07.99 Other(Specify),,,Numeric
+,,Apyo Gyi,1,
+,,Loon Ni,2,
+,,Groundnut,3,
+,,Kidney Bean,4,
+,,Black Gram,5,
+,,Black-eyed pea,6,
+,,Yellow gram,7,
+,,Pel Lone Phyu,8,
+,,Butterfly bean,9,
+,,Pel Hlaing htaung,10,
+,,Cow Pea,11,
+,,Pel Lat Kout,12,
+,,Pel Yay Pwa,13,
+,,Pel Yarzar,14,
+,,Pel Shan,15,
+,,Pel Phyu,16,
+,,Horse gram,17,
+,,Mung bean,18,
+,,Pel Ni Pyar,19,
+,,Pel Zeegwat,20,
+,,Pigeon Pea,21,
+,,Pel San,22,
+,,Pel Sein,23,
+,,Pel Seik Toe,24,
+,,Chin Pel,25,
+,,Pel Chan Lay,26,
+,,Pel Kyar Sein,27,
+,,Buma Bean,28,
+,,Pel Kyan,29,
+,,Dolichos lablab,30,
+,,Taung Paw Pel,31,
+,,Son Tar Ni,32,
+,,gout pel,33,
+h_07_unit,H.07. cheapest (Unit Code),,,Numeric
+,,1 viss,1,
+,,10 kyatthar,2,
+,,1 can,3,
+,,1 pyi,4,
+h_08,H.08. What is the current price of one hand of bananas? Please specify the varie,,,Integer
+,,Cavendish Banana (Thi hmwe),1,
+,,Burro Banana ( Phi Kyam),2,
+,,Lady's Finger Bananas ( Nga Pyaw Chin),3,
+,,Red banana (Shwe Nga Pyaw),4,
+,,Pisang awak banana ( Rakhine bananas),5,
+,,green peas (Pe Pyot),6,
+,,Don’t know,9998,
+,,Other,9999,
+h_08_01,H.08.1.Cavendish Banana (Thi hmwe) ___Kyat,Open ended,,Integer
+h_08_02,H.08.2. Burro Banana ( Phi Kyam) ___Kyat,Open ended,,Integer
+h_08_03,H.08.3. Lady's Finger Bananas ( Nga Pyaw Chin) ___Kyat,Open ended,,Integer
+h_08_04,H.08.4. Red banana (Shwe Nga Pyaw) ___Kyat,Open ended,,Integer
+h_08_05,H.08.5. Pisang awak banana ( Rakhine bananas) __Kyat,Open ended,,Integer
+h_08_oth,h.08.99 Other(Specify),,,Numeric
+,,Wat Ma Loot,1,
+,,Nant Thar Phu,2,
+,,Nga maung Pyar,3,
+h_09,H.09. What is the current price of 1 Viss/10 kyatthar of the cheapest type of on,,,Integer
+,,Don't Know,9998,
+h_09_unit,H.09. Onions (Unit code),,,Numeric
+,,1 viss,1,
+,,10 kyatthar,2,
+h_10,H.10. What is the current price of one bunch of the cheapest common type of gree,,,Integer
+,,Water leaf (Water spinach),1,
+,,Roselle leaf,2,
+,,Mustard green,3,
+,,Spinach leaf,4,
+,,Bottle gourd leaf,5,
+,,Don’t know,9998,
+,,Other,9999,
+h_10_01,H.10.1.Water leaf (Water spinach) _____Kyat,Open ended,,Integer
+h_10_02,H.10.2. Roselle leaf_____Kyat,Open ended,,Integer
+h_10_03,H.10.3. Mustard green_____Kyat,Open ended,,Integer
+h_10_04,H.10.4. Spinach leaf_____Kyat,Open ended,,Integer
+h_10_05,H.10.5. Bottle gourd leaf_____Kyat,Open ended,,Integer
+h_10_oth,h.10.99 Other(Specify),,,Numeric
+,,Turnip (Mone Lar Ywat),1,
+,,Radish Sprout (Mone Lar Pin Pout),2,
+,,Basil,3,
+,,Coriander Plant,4,
+,,Salad,5,
+,,Cabbage,6,
+,,Chinese Broccoli,7,
+h_11,H.11. What is the current price of  1 Viss/10 kyatthar of chicken meat without b,,,Integer
+,,Don't Know,9998,
+h_11_unit,H.11.  chicken meat without bones (Unit Code),,,Numeric
+,,1 viss,1,
+,,10 kyatthar,2,
+h_12,"H.12. What is the current price of 1 Viss/ 10 kyatthar f dried/smoked fish, shri",,,Integer
+,,Dried Ngayant,1,
+,,Dried Ngakhu/ Ngagyee,2,
+,,Dried Catfish,3,
+,,Dried Spiny eel,4,
+,,Dried small shrimp,5,
+,,Dired medium shrimp,6,
+,,Dried sea fish,7,
+,,Don’t know,9998,
+,,Other,9999,
+h_12_01,H.12.1.Dried Ngayant____Kyat (1 viss/10 kyatthar),Open ended,,long
+h_12_02,H.12.2. Dried Ngakhu/ Ngagyee___Kyat  (1 viss/10 kyatthar),Open ended,,Integer
+h_12_03,H.12.3. Dried Catfish____Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_12_04,H.12.4. Dried Spiny eel____Kyat(1 viss/10 kyatthar),Open ended,,Integer
+h_12_05,H.12.5. Dried small shrimp____Kyat(1 viss/10 kyatthar),Open ended,,long
+h_12_06,H.12.6. Dired medium shrimp___Kyat(1 viss/10 kyatthar),Open ended,,long
+h_12_07,H.12.7. Dried sea fish__kyat(1 viss/10 kyatthar),Open ended,,long
+h_12_oth,h.12.99 Other(Specify),,,Numeric
+,,R Byal Chouk,1,
+,,Ngar Nhut Chouk,2,
+,,La Thar Chauk/ Shwe La Thar,3,
+,,Rakhine Chouk,4,
+,,Nga Mhee Tan Thwel Chouk,5,
+,,Pazun Chauk Gyi Shal,6,
+,,Palar Tuu Chouk/ Ngar Thittar Chauk,7,
+,,Darma Nai Ngar Chauk,8,
+,,Tilapia,9,
+,,Si Nga yaung Chauk/ Nga Yaung Pyar Chauk/ Nga Yaung Chauk,10,
+,,Ngar Htaw Pat Chauk,11,
+,,Nga Ohn Chauk,12,
+,,Nga Athay Chauk,13,
+,,Nga Tha Lel Chauk,14,
+,,Nga Ni Tu Chauk,15,
+,,Nga Lone Chauk,16,
+,,Nga Khone Ma,17,
+,,Nga Shay Chauk,18,
+,,Nga Shwe Chauk/ Nga Shwe Pyar,19,
+,,Ngar Nyat Chauk,20,
+,,Nga Mel Lone Chauk,21,
+,,Nga Myinn Chauk,22,
+,,Ngar Byat Chauk,23,
+,,Nga Phaung Yoe Chauk,24,
+,,Nga Phyinn Tha Lat Chauk,25,
+,,Nga Putin Chauk,26,
+,,Nga Pote Thin Chauk,27,
+,,Nga Pa Naw Chauk yay Cho,28,
+,,Nga Nhat Chauk,29,
+,,Nga Ta Gon Chauk,30,
+,,Nga Kone Nyo,31,
+,,Nga Koon Shat Chauk,32,
+,,Nga Kyi Kan,33,
+,,Nga Watma Chauk,34,
+,,Nga Nhote Chauk,35,
+h_12_unit,"H.12. Dried/smoked fish, shrimp, prawns (Unit Code)",,,Numeric
+,,1 viss,1,
+,,10 kyatthar,2,
+h_13,H.13. What is the current price of 1 viss/10 kyatthar of fresh fish? Please spec,,,Integer
+,,Ngamyitchin,1,
+,,Ngagyin,2,
+,,Ngayant,3,
+,,Ngakhu/ Ngagyee,4,
+,,Ngapyayma,5,
+,,Ngaton,6,
+,,Ngamyinn,7,
+,,Ngathalauk,8,
+,,Tilapia,9,
+,,Catfish,10,
+,,Spiny eel ( naghmwe htoe),11,
+,,Don’t know,9998,
+,,Other,9999,
+h_13_01,H.13.1. Ngamyitchin___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_02,H.13.2. Ngagyin___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_03,H.13.3. Ngayant___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_04,H.13.4. Ngakhu/ Ngagyee___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_05,H.13.5. Ngapyayma___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_06,H.13.6. Ngaton ___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_07,H.13.7. Ngamyinn___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_08,H.13.8. Ngathalauk___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_09,H.13.9. Tilapia ___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_10,H.13.10. Catfish___Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_11,H.13.11. Spiny eel ( naghmwe htoe) __Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_13_unit,H.13. fresh fish (Unit Code),,,Numeric
+,,1 viss,1,
+,,10 kyatthar,2,
+h_14,H.14. What is the current price of 1 viss / 10 kyatthar of the cheapest type of ,,,Integer
+,,Palm oil,1,
+,,Vegetable oil,2,
+,,Groundnut oil,3,
+,,Sesame oil,4,
+,,Don’t know,9998,
+,,Other,9999,
+h_14_01,H.14.1.Palm oil____Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_14_02,H.14.2. Vegetable oil____Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_14_03,H.14.3. Groundnut oil____Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_14_04,H.14.4. Sesame oil____Kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_14_99,H.14.9999. Other___kyat (1 viss/10 kyatthar),Open ended,,Integer
+h_14_oth,h.14.99 Other(Specify),,,Numeric
+,,Mixed Oil,1,
+,,Indo Oil,2,
+,,Cow Pea Oil,4,
+,,Pel Lat Oil,5,
+,,Pel Yaw Oil,6,
+,,Pel Pote Oil,7,
+,,Pel Nhan Yoe Yoe/ Pel Nhan,8,
+,,Shrimp Oil,9,
+,,Sunflower Oil,10,
+,,Nhan Lat Oil,11,
+,,Sesame & Vegetable Oil,12,
+,,Nhan Gyar Oil,13,
+h_14_unit,H.14. cooking oil (Unit Code),,,Numeric
+,,1 viss,1,
+,,10 kyatthar,2,
+h_15,H.15. What is the current price of one gallon of petrol?____ Kyat,,,Integer
+,,Don't Know,9998,
+i_01,"I.01. How many people have sent you remittances, either in cash or in kind, from",Open ended,,Numeric
+i_02,i.02 What was the total value of these remittances in the past three months?,Open ended,,Numeric
+i_03,I.03 How many people have sent you or any other household member remittances fro,Open ended,,Numeric
+i_04,i.04 What is the total value of these remittances in the past three months?,Open ended,,Numeric
+i_05,"I.05 In the last three months, which was the main challenge you had for receivin",,,Numeric
+,,no difficulties,0,
+,,Migrant(s) faced lower income/less work,1,
+,,Migrant(s) had trouble sending money/goods due to financial system disruptions,2,
+,,It is very expensive to transfer money / paying fees to withdraw remittance,3,
+,,Migrants(s) faced their own economic difficulties and had less to send,4,
+,,Migrants(s) had health problems,5,
+,,Migrants(s) faced security problems,6,
+,,Other – please list,9999,
+i_06_01,"i.06 In the last three months, did you or any other household member receive any",,,Numeric
+,,Yes,1,
+,,No,2,
+i_06_02,"i.06 In the last three months, did you or any other household member receive any",,,Numeric
+,,Yes,1,
+,,No,2,
+i_06_03,"i.06 In the last three months, did you or any other household member receive any",,,Numeric
+,,Yes,1,
+,,No,2,
+i_07,i.07. What was the total value of these pensions or benefits in the past three m,Open ended,,Numeric
+i_08,"I.08. In the past three months, has anyone provided any food products, non-food ",,,Numeric
+,,Yes,1,
+,,No,2,
+i_09_00,Sources of supportreceived by your household in the past three months:Nothing re,,,Numeric
+,,Yes,1,
+,,No,2,
+i_09_01,Sources of supportreceived by your household in the past three months:Local reli,Open ended,,long
+i_09_02,"Sources of supportreceived by your household in the past three months:Monastery,",Open ended,,long
+i_09_03,Sources of supportreceived by your household in the past three months:Internatio,Open ended,,long
+i_09_04,Sources of supportreceived by your household in the past three months:SAC,Open ended,,long
+i_09_05,Sources of supportreceived by your household in the past three months:Other/loca,Open ended,,long
+i_09_06,"Sources of supportreceived by your household in the past three months:Family, fr",Open ended,,long
+i_09_07,Sources of supportreceived by your household in the past three months:Community-,Open ended,,long
+j_01,J.01. In the past 3 months was your household negatively affected by any natural,,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_01,"J.02 If so, which one? : drought",,,Numeric
+,,No,0,
+,,Yes,1,
+j_02_02,"J.02 If so, which one? : excessive rain, hail, flood",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_03,"J.02 If so, which one? : irregular rain fall or temperature",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_04,"J.02 If so, which one? : lightning",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_05,"J.02 If so, which one? : landslide",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_06,"J.02 If so, which one? : earthquake",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_07,"J_02 If so, which one? : strong wind",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_08,"J_02 If so, which one? : frost",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_99,"J.02 If so, which one? : other (specify)",,,Numeric
+,,Yes,1,
+,,No,2,
+j_02_oth,J.02.99 Other(Specify),,,Numeric
+,,Strong Wind,7,
+,,Snowing,8,
+j_04,"J.04. In this year 2021, how many people in your household had any COVID-like sy",,,Numeric
+,,prefer not to answer,9997,
+,,Don't Know,9998,
+j_05,J.05 How many people from your household passed away in 2021 due to COVID?,,,Numeric
+,,prefer not to answer,9997,
+j_06,J.06 How many people from your household passed away in 2021 due to non-COVID ca,,,Integer
+,,prefer not to answer,9997,
+j_07_01,HH affected by violence in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_07_02,HH affected by theft in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_07_03,HH affected by intra-household conflict in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_07_04,None,,,Numeric
+,,Yes,1,
+,,No,2,
+j_07_97,Prefer not to answer,,,Numeric
+,,Yes,1,
+,,No,2,
+j_08,"J.08 How would you describe the overall level of physical security in your area,",,,Integer
+,,1 = very insecure,1,
+,,2 = somewhat insecure,2,
+,,3 = secure,3,
+,,4 = very secure,4,
+,,prefer not to answer,9997,
+j_09,"J.09 How would you describe the social relationships and trust in your area, fro",,,Integer
+,,1 = very low trust,1,
+,,2 = low trust,2,
+,,3 = high trust,3,
+,,4 = very high trust,4,
+,,prefer not to answer,9997,
+j_10_01,Community occured the large influx of migrants in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_10_02,Community occured the large departure of residents in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_10_03,Community occured the increase in crime in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_10_04,Community occured the violence in the past 3 months,,,Numeric
+,,Yes,1,
+,,No,2,
+j_10_99,Other,,,Numeric
+,,Yes,1,
+,,No,2,
+j_10_oth,J.10. Other (specify) English,,,Numeric
+,,House set on fire/ Fled to safety from the war,5,
+,,War in the western village,6,
+,,Heavy artillery fire in the vicinity,7,
+,,Fled to safety from the war,8,
+,,Frighten due to the war,9,
+j_11,"J.11 In the past month, if an adult from your community was hired to do any unsk",,,Integer
+,,__________MMK,1,
+,,not applicable,9996,
+,,don’t know,9998,
+j_11_mmk,J.11 In MMK_________,Open ended,,Integer
+j_12,J.12 and a woman?,,,Integer
+,,__________MMK,1,
+,,not applicable,9996,
+,,don’t know,9998,
+j_12_mmk,J.12 In MMK_________,Open ended,,Integer
+j_13,"J.13 In the past month, if an adult from your community was hired to do any unsk",,,Integer
+,,__________MMK,1,
+,,not applicable,9996,
+,,don’t know,9998,
+j_13_mmk,J.13 In MMK_________,Open ended,,Integer
+j_14,J.14 and a woman?,,,Integer
+,,__________MMK,1,
+,,not applicable,9996,
+,,don’t know,9998,
+j_14_mmk,J.14 In MMK_________,Open ended,,Integer
+k_01,K.01. sell any asset?,,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because already sold assets in the last 12 months and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_02_01,"K.02. which assets? : Gold, jewelry, US dollars",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_02,"K.02. which assets? : Household assets (furniture, TV, radio, fridge, etc.)",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_03,"K.02. which assets? : Agricultural parcels (incl. fish pond, livestock rearing p",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_04,"K.02. which assets? : Residential parcels, house/dwelling",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_05,"K.02. which assets? : Means of transport (car, motorbike, bicycle, rickshaw, boa",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_06,"K.02. which assets? : Non-ag productive assets (sewing machine, wheelbarrow, etc",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_07,"K.02. which assets? : Agricultural productive assets (power tiller, tractor, dra",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_08,K.02. which assets? : livestock,,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_09,"K.02. which assets? : fishery assets (nets, pumps, other equipment, etc)",,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_10,Selling crops,,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_11,Selling non-productive things,,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_12,Selling phone,,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_99,k.02.99. Other,,,Numeric
+,,Yes,1,
+,,No,2,
+k_02_oth,k.02.99. Other(Specify),,,Numeric
+,,Onion,10,
+,,Betel Nuts,11,
+,,Crops,12,
+,,Loom,13,
+,,Paddy/ Stored  beans and paddy,14,
+,,Paddy and Beans,15,
+,,Crops (Sesame),16,
+,,Hair,17,
+,,Tobacco,18,
+,,A Bag of rice that get as a supply,19,
+,,Seedling,20,
+,,Corn,21,
+,,Phone,22,
+,,Groundnut,23,
+,,Stored Paddy,24,
+,,Burmese Black Wood - 5 trees,25,
+,,Tree (for firewood),26,
+,,Clothes,27,
+,,Stored Oil for the family,28,
+k_03,K.03. mortgage any asset? (should include also those loans gotten by going with ,,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because already mortgaged assets in the last 12 months and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_04_01,"K.04. which assets? : Gold, jewelry, US dollars",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_02,"K.04. which assets? : Household assets (furniture, TV, radio, fridge, etc.)",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_03,"K.04. which assets? : Agricultural parcels (incl. fish pond, livestock rearing p",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_04,"K.04. which assets? : Residential parcels, house/dwelling",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_05,"K.04. which assets? : Means of transport (car, motorbike, bicycle, rickshaw, boa",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_06,"K.04. which assets? : Non-ag productive assets (sewing machine, wheelbarrow, etc",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_07,"K.04. which assets? : Agricultural productive assets (power tiller, tractor, dra",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_08,K.04. which assets? : livestock,,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_09,"K.04. which assets? : fishery assets (nets, pumps, other equipment, etc)",,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_99,k.04.99. Other,,,Numeric
+,,Yes,1,
+,,No,2,
+k_04_oth,k.04.99. Other(Specify),,,Numeric
+,,Clothes,11,
+,,Clothes/ Bowl/ Cup/ Plate,12,
+,,Phone,13,
+,,Palms,14,
+,,Bicycle,15,
+k_04_other,Mortgaging others,,,Numeric
+,,Yes,1,
+,,No,2,
+k_05,K.05. Sold or consumed seed stocks that were to be held/saved for the next plant,,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because we already sold or consumed seed stocks in the last 12 months and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_06,"K.06. Reduced expenditures on agricultural inputs: seeds, fertilizers, agro-chem",,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because already reduced these expenditures and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_07,K.07. Spend savings?,,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because already spent my savings in the past 12 months and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_08,K.08. Reduced expenses on health (including drugs)?,,,Integer
+,,Yes,1,
+,,No - no medical or education expenditures needed,2,
+,,No - because already reduced these expenditures in the past 12 months and could not continue to do it,3,
+,,Not applicable (= no medical or education expenditures),4,
+,,prefer not to say,9997,
+,,prefer not to say,9998,
+k_09,K.09. Reduced other non-food expenditures?,,,Integer
+,,Yes,1,
+,,No,2,
+,,No - because already reduced these expenditures in the past 12 months and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_10,K.10. Reduced food expenditures?,,,Integer
+,,Yes,1,
+,,No,2,
+,,No - because already reduced these expenditures in the past 12 months and could not continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_11,K.11. purchase food on credit or borrow food?,,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because already did it in the past 12 months and you cannot continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_12,K.12. borrow money? (not from pawn shop),,,Integer
+,,Yes,1,
+,,No - because it wasn’t necessary,2,
+,,No - because already borrowed money in the past 12 months and you cannot continue to do it,3,
+,,Not applicable,4,
+,,prefer not to say,9997,
+k_13,K.13. have to migrate with the entire household?,,,Integer
+,,Yes,1,
+,,No – because it wasn’t necessary,2,
+,,No – because we already moved in the past 12 months and you cannot continue to do it,3,
+,,not applicable,4,
+,,prefer not to say,9997,
+k_14,K.14 children need to work as well? \n(under 15 children),,,Integer
+,,Yes (within the past 30 days),1,
+,,no – we did not let the children work,2,
+,,no – children were already working even before these last 30 days (within the past 12 months),3,
+,,not applicable,4,
+,,prefer not to say,9997,
+,,Not applicable,9998,
+k_15,K.15. any type of activity that you have never done before and which has high ri,,,Integer
+,,No loans,0,
+,,Yes,1,
+,,No – because it wasn’t necessary,2,
+,,No – we already did this in the past 12 months,3,
+,,not applicable,4,
+,,prefer not to say,9997,
+k_16,"K.16. Currently, do you owe any money to loan or credit providers, including ban",,,Integer
+,,Yes,1,
+,,No,2,
+,,prefer not to say,9997,
+,,Don’t know,9998,
+k_17,"K.17. For all the loans/credit you currently have, how difficult will it be to p",,,Integer
+,,Not difficult,1,
+,,Somewhat difficult,2,
+,,Very difficult,3,
+,,prefer not to say,9997,
+,,Don’t know,9998,
+l1_01,L.01. How many infants (<2 years old) live in this household?,Open ended,,Numeric
+l1_02,L.02. Are you knowledgeable about his/her food intake yesterday- or is main care,,,Numeric
+,,"Yes, I am knowledgeable (=respondent)",1,
+,,"Yes, caretaker can help answer these questions",2,
+,,No,3,
+l1_03,l.03 What is the birthdate of your child under the age of two?_,Open ended,,Numeric
+l1_03a_day,L.03a.What is the birthdate of your child under the age of two? ____  day   (999,,,Integer
+,,Don't Know,9998,
+l1_04,L.04. What is the gender of this child?,,,Numeric
+,,Male,1,
+,,Female,2,
+l1_05,"L.05. Is your child eating any solid, semi-solid or soft foods (not liquid only)",,,Numeric
+,,Yes,1,
+,,No,2,
+l1_06,"L.06. Yesterday, during the day and night, how many times did your youngest chil",,,Integer
+,,Don't Know,9998,
+l2_01,"L1. Was yesterday a special day? Fasting/festival/visitors/other celebration, et",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_02_a,"L2.A.dark green leafy vegetables  {For your selected child under 2 years, did yo",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_02_b,"L2.B. dark green leafy vegetables  {For your own consumption, did you eat these ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_02_c,"L2.C. dark green leafy vegetables  {In your household, over the last 7 days, how",Open ended,,Numeric
+l2_03_a,"L3.A. orange-colored vegetables or roots, such as pumpkin, sweet potatoes, carro",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_03_b,"L3.B. orange-colored vegetables or roots, such as pumpkin, sweet potatoes, carro",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_03_c,"L3.C. orange-colored vegetables or roots, such as pumpkin, sweet potatoes, carro",Open ended,,Numeric
+l2_04_a,"L4.A. other vegetables, such as tomatoes, white cabbage, eggplant, lady finger, ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_04_b,"L4.B. other vegetables, such as tomatoes, white cabbage, eggplant, lady finger, ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_04_c,"L4.C. other vegetables, such as tomatoes, white cabbage, eggplant, lady finger, ",Open ended,,Numeric
+l2_05_a,"L5.A. Rice {For your selected child under 2 years, did your child eat these food",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_05_b,"L5.B. Rice {For your own consumption, did you eat these foods in the last 24h?}",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_05_c,"L5.C. Rice {In your household, over the last 7 days, how many days did members o",Open ended,,Numeric
+l2_06_a,"L6.A. breads/rotis, sweet potato, potato, noodles (including instant) {For your ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_06_b,"L6.B. breads/rotis, sweet potato, potato, noodles (including instant) {For your ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_06_c,"L6.C. breads/rotis, sweet potato, potato, noodles (including instant) {In your h",Open ended,,Numeric
+l2_07_a,"L7.A. Bean (such as butter beans, lima beans, lablab beans, mung beans) peas (su",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_07_b,"L7.B. Bean (such as butter beans, lima beans, lablab beans, mung beans) peas (su",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_07_c,"L7.C. Bean (such as butter beans, lima beans, lablab beans, mung beans) peas (su",Open ended,,Numeric
+l2_08_a,"L8.A. nuts or seeds, such as groundnut, sesame, cashew, sunflower seeds, pumpkin",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_08_b,"L8.B. nuts or seeds, such as groundnut, sesame, cashew, sunflower seeds, pumpkin",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_08_c,"L8.C. nuts or seeds, such as groundnut, sesame, cashew, sunflower seeds, pumpkin",Open ended,,Numeric
+l2_09_a,"L9.A. milk and other dairy products (cheese, milk (powder/liquid), infant formul",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_09_b,"L9.B. milk and other dairy products (cheese, milk (powder/liquid), infant formul",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_09_c,"L9.C. milk and other dairy products (cheese, milk (powder/liquid), infant formul",Open ended,,Numeric
+l2_10_a,"L10.A. Fish, canned fish, dried fish, praw, dried prawn or other seafood (includ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_10_b,"L10.B. Fish, canned fish, dried fish, praw, dried prawn or other seafood (includ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_10_c,"L10.C. Fish, canned fish, dried fish, praw, dried prawn or other seafood (includ",Open ended,,Numeric
+l2_11_a,"L11.A. Poultry, pork, mutton, beef or other  or meat or organs (liver, kidney, h",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_11_b,"L11.B. Poultry, pork, mutton, beef or other  or meat or organs (liver, kidney, h",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_11_c,"L11.C. Poultry, pork, mutton, beef or other  or meat or organs (liver, kidney, h",Open ended,,Numeric
+l2_12_a,"L12.A. Eggs (chicken, duck, quail) {For your selected child under 2 years, did y",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_12_b,"L12.B. Eggs (chicken, duck, quail) {For your own consumption, did you eat these ",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_12_c,"L12.C. Eggs (chicken, duck, quail) {In your household, over the last 7 days, how",Open ended,,Numeric
+l2_13_a,"L13.A. orange or dark yellow colored fruits, such as ripe mango, ripe papaya, ri",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_13_b,"L13.B. orange or dark yellow colored fruits, such as ripe mango, ripe papaya, ri",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_13_c,"L13.C. orange or dark yellow colored fruits, such as ripe mango, ripe papaya, ri",Open ended,,Numeric
+l2_14_a,"L14.A. Other fruits (incl. regular banana, pineapple, water melon, avocado etc.)",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_14_b,"L14.B. Other fruits (incl. regular banana, pineapple, water melon, avocado etc.)",,,Numeric
+,,Yes,1,
+,,No,2,
+l2_14_c,"L14.C. Other fruits (incl. regular banana, pineapple, water melon, avocado etc.)",Open ended,,Numeric
+l2_15_c,"L15.C. Sugar food consumption (sweets, chocolates, cake, fruit jam) & Sugary dri",Open ended,,Numeric
+l2_16_c,"L16.C. Oils or fats (vegetable oils, butter, ghee, animal fats) {In your househo",Open ended,,Numeric
+m_01_01,M.01. Who is the main responsible for food purchases in the household? : Respond,,,Numeric
+,,Yes,1,
+,,No,2,
+m_01_02,M.01. Who is the main responsible for food purchases in the household? : Spouse ,,,Numeric
+,,Yes,1,
+,,No,2,
+m_01_03,M.01. Who is the main responsible for food purchases in the household? : Other h,,,Numeric
+,,Yes,1,
+,,No,2,
+m_01_98,M.01. Who is the main responsible for food purchases in the household? : Don’t k,,,Numeric
+,,Yes,1,
+,,No,2,
+m_02,"M.02. During the past 7 days , could you tell me how much in total you and any o",,,long
+,,Don't Know,9998,
+m_03,"M.03. During the past 7 days, how much did you and your household members spend ",,,long
+,,Don't Know,9998,
+m_04,"M.04. During the past 7 days, did you or any household member consume anything f",,,Numeric
+,,Yes,1,
+,,No,2,
+m_05,"M.05. During the past 7 days, could you tell me the total value of food you and ",,,long
+,,Don't Know,9998,
+m_06,"M.06. During the past 7 days, did you or any other household member consume any ",,,Numeric
+,,Yes,1,
+,,No,2,
+m_07,"M.07. During the past 7 days, could you tell me the total value of food you and ",,,long
+,,Don't Know,9998,
+n_01,"N.01. In the past 4 weeks, was there ever no food to eat of any kind in your hou",,,Integer
+,,Yes,1,
+,,No,2,
+n_02,N.02. How often did this happen in the past four weeks?,,,Numeric
+,,Rarely (1–2 times),1,
+,,Sometimes (3–10 times),2,
+,,Often (more than 10 times),3,
+n_03,"N.03. In the past 4 weeks, did you or any household member go to sleep at night ",,,Integer
+,,Yes,1,
+,,No,2,
+n_04,N.04. How often did this happen in the past four weeks?,,,Numeric
+,,Rarely (1–2 times),1,
+,,Sometimes (3–10 times),2,
+,,Often (more than 10 times),3,
+n_05,"N.05. In the past 4 weeks, did you or any household member go a whole day and ni",,,Integer
+,,Yes,1,
+,,No,2,
+n_06,N.06. How often did this happen in the past four weeks?,,,Numeric
+,,Rarely (1–2 times),1,
+,,Sometimes (3–10 times),2,
+,,Often (more than 10 times),3,
+o_01_00,No problems,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_01,ATM not working,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_02,Bank closed or no cash,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_03,Only limited amount can be withdrawn,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_04,Had to pay agent fees to obtain cash,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_05,Had to take time off work,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_06,Other problems,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_96,Not applicable (did not want to take out cash),,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_97,Don't want to answer,,,Numeric
+,,Yes,1,
+,,No,2,
+o_01_98,Don't Know,,,Numeric
+,,Yes,1,
+,,No,2,
+o_02,"O.02. In the last 4 weeks30 days , did you or any other household member need me",,,Numeric
+,,Yes,1,
+,,No,2,
+o_03,"O.03. If yes, were you able to access these services?",,,Numeric
+,,"yes, any time I wanted to use medical services",1,
+,,most of the time,2,
+,,only a few times,3,
+,,"no, never in the last",4,
+o_04,O.04. In the past 4 weeks were your school-age children (5-14 years) able to att,,,Integer
+,,"yes, all my children",1,
+,,only some of my children,2,
+,,None of our children attended school,3,
+,,Don’t Know,9998,
+o_05,"O.05. In the last 4 weeks, did you or any member of your household use the inter",,,Numeric
+,,"yes, any time I wanted to use the internet",1,
+,,most of the time,2,
+,,only a few times,3,
+,,"no, never in the last",4,
+o_06,O.06. What was the reason for not using the internet or not using it as much as ,,,Numeric
+,,no money for data / no working mobile phone,1,
+,,internet services disruptions in the area,2,
+,,electricity access/service problems,3,
+,,no interest or not knowledgeable to use internet,4,
+,,Other reasons,5,
+q_00,Q.00. Language used in interviewing,,,Numeric
+,,Myanmar,1,
+,,Kachin,2,
+,,Chin,3,
+,,Kayin,4,
+,,Shan,5,
+,,Rakhine,6,
+q_01,Q.01. Who responded to this interview?,,,Numeric
+,,respondent only (as recorded with info from section B),1,
+,,respondent (as in section B) and other household members jointly,2,
+,,"respondent was changed during the interview or for some sections of the interview, different from the person recorded…",3,
+q_02_01,Q.02. Which modules were answered by a different respondent? Module A,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_02,Q.02. Which modules were answered by a different respondent? Module B,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_03,Q.02. Which modules were answered by a different respondent? Module C,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_04,Q.02. Which modules were answered by a different respondent? Module D,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_05,Q.02. Which modules were answered by a different respondent? Module E,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_06,Q.02. Which modules were answered by a different respondent? Module F,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_07,Q.02. Which modules were answered by a different respondent? Module G,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_08,Q.02. Which modules were answered by a different respondent? Module H,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_09,Q.02. Which modules were answered by a different respondent? Module I,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_10,Q.02. Which modules were answered by a different respondent? Module J,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_11,Q.02. Which modules were answered by a different respondent? Module K,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_12,Q.02. Which modules were answered by a different respondent? Module L,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_13,Q.02. Which modules were answered by a different respondent? Module M,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_14,Q.02. Which modules were answered by a different respondent? Module N,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_15,Q.02. Which modules were answered by a different respondent? Module O,,,Numeric
+,,Yes,1,
+,,No,2,
+q_02_16,Q.02. Which modules were answered by a different respondent? Module P,,,Numeric
+,,Yes,1,
+,,No,2,
