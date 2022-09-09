@@ -124,11 +124,11 @@ mini <- read_csv("./data/mini.csv")
 
 <br><br><br>
 
-## Findings
+# Initial findings
 
 This has been a cursory examination, given the limited timeframe. But, it is apparent that the results of the MSNA are robust and that it will be an excellent tool to improve programmatic and operational decision making. 
 
-However, more thorough analysis is required. I have only just looked at a small portion of the data. But please find below some of my initial observations. 
+However, more thorough analysis is required. I have only just looked at a small portion of the data. My observations are documented below. 
 
 <br><br><br>
 
@@ -139,7 +139,8 @@ mini %>%
   ggplot(aes(x = hhfcs)) + 
   geom_histogram(bins=30) + 
   geom_freqpoly(binwidth = 2, 
-                colour = "red") + 
+                colour = "red",
+                alpha = .7) + 
   labs(x = "Food consumption score", 
        y = "Number of households", 
        title = "Normal distribution of food consumption scores", 
@@ -153,6 +154,8 @@ This is a good looking, quite normal distribution of food consumption scores.
 
 For reference, the distribution of food consumption scores in the surveyed population of the FAO/WFP survey looks like this, a bit more skewed and misshapen, probably due to the smaller sample size. 
 
+It is also important to note how much more definition there is in the lower end of the spectrum in the MSNA compared to the FAO/WFP survey. 
+
 <br>
 
 ```{r}
@@ -160,7 +163,8 @@ survey %>%
   ggplot(aes(x = hhfcs)) + 
   geom_histogram(bins=30) +
   geom_freqpoly(binwidth = 2, 
-                colour = "red") + 
+                colour = "red",
+                alpha = .7) + 
   labs(x = "Food consumption score", 
        y = "Number of households", 
        title = "Distribution of food consumption scores", 
@@ -264,7 +268,7 @@ This corroborates with common understanding of the context in Myanmar and struct
 
 This added level of detail is immediately much more useful at identifying populations in need of assistance and what types of targeted support would improve their circumstances.  
 
-Bearing in mind that the food security monitoring survey is not an education tool, it is nevertheless imperative to make the best use of each question we ask and it is recommended that the FAO/WFP survey adopt MSNA convention for their survey. 
+Bearing in mind that the food security monitoring survey is not an education tool, it is nevertheless imperative to make the best use of each question we ask and it is recommended that the FAO/WFP survey adopt the MSNA convention for their survey, at least for this question. 
 
 <br>
 
@@ -472,9 +476,11 @@ acled %>%
 
 <br>
 
-As a caveat, this variable needs to be explored in much more depth, but a cursory glance at it shows that it squares with our understanding of where the conflict is most intense. The margin by which Nay Pyi Taw comes last after Ayeryarwady and Bago is a reassuring indicator of the quality of the data.
+As a caveat, this variable needs to be explored in much more depth, but a cursory glance at it shows that it squares with our understanding of where the conflict is most intense. That Nay Pyi Taw comes last after Ayeryarwady and Bago is consistent with a broader understanding of the crisis.
 
-Relatively high insecurity in places like Shan (North) and Kachin remind us that previously insecure places have not improved, instead it is instead that the rest of the country has lurched into open civil war. This, of course, forestalls the long-term investment and peacebuilding efforts that are necessary to stabilise the country. 
+Relatively high perceptions of insecurity in places like Shan (North) and Kachin remind us that many parts of these states have not so much improved, as opposed to the rest of the country having lurched into open civil war. This, of course, forestalls the long-term investment and peacebuilding efforts that are necessary to stabilise the country. 
+
+In that case, working with the private sector becomes extremely necessary and the MSNA should prove to be an excellent resource in identifying points of common interest. 
 
 As perhaps one final comparison with the FAO/WFP survey, the question there is: 
 
@@ -503,4 +509,12 @@ survey %>%
 
 ```
 
+<br><br><br>
 
+## 5. Next Steps
+
+* Determine the level of interoperability between the FAO/WFP, IFPRI and MSNA datasets. Preparation for subsequent rounds of data collection and try to improve coordination between each of the surveys. 
+
+* Work with other actors to develop updated vulnerability model -- maybe try clustering households again. 
+
+* Exporatory data analysis will continue. 
