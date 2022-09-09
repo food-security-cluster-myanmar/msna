@@ -143,7 +143,7 @@ mini %>%
   labs(x = "Food consumption score", 
        y = "Number of households", 
        title = "Normal distribution of food consumption scores", 
-       subtitle = "In the MSNA", 
+       subtitle = "MSNA", 
        caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")
 
 ```
@@ -168,7 +168,7 @@ survey %>%
   labs(x = "Food consumption score", 
        y = "Number of households", 
        title = "Distribution of food consumption scores", 
-       subtitle = "In round 3 of the FAO/WFP food security survey", 
+       subtitle = "FAO/WFP round 3", 
        caption = "FAO/WFP food security survey round 3 2022")
 ```
 
@@ -398,7 +398,7 @@ mini %>%
         axis.text.x = element_text(size = 8), 
         plot.caption = element_text(hjust = .5)) +
   labs(x = "Percentage of households", y = "", 
-       title = "Percentage of households who feel insecure, unweighted", 
+       title = "Percentage of households who feel insecure (somewhat and very), unweighted", 
        caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")  + 
   
 acled %>%
@@ -470,8 +470,32 @@ acled %>%
        title = "Conflict events per million persons, as of 06-06-2022", 
        caption = "ACLED; acleddata.com") +
   
+mini %>% 
+  group_by(state) %>% 
+  mutate(very_insecure = ifelse(physical_security > .67, 
+                                1, 0)) %>% 
+  summarise(count = sum(count), 
+            very_insecure = sum(very_insecure)) %>% 
+  mutate(pc_very_insecure = round(very_insecure / count * 100, 
+                             digits = 2)) %>% 
+  ungroup() %>% 
+  mutate(state = fct_reorder(state, pc_very_insecure)) %>% 
+  ggplot(aes(x = pc_very_insecure, y = state)) + 
+  geom_col(fill = "grey70") + 
+  geom_text(aes(label = pc_very_insecure),
+            size = 2.5, 
+            colour = "black", hjust = 1) +
+  theme(legend.position = "none", 
+        plot.title = element_text(size = 11), 
+        axis.text.x = element_text(size = 8), 
+        plot.caption = element_text(hjust = .5)) +
+  labs(x = "Percentage of households", y = "", 
+       title = "Percentage of households who feel VERY insecure, unweighted", 
+       caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")  + 
+  
   plot_layout(ncol = 2, 
               heights = c(2, 2))
+
 ```
 
 <br>

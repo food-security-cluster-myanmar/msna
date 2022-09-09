@@ -453,6 +453,9 @@ msna <- msna_raw %>%
 
 ```
 
+
+### FAO survey mini
+
 ```{r survey_mini}
 survey %>%
   mutate(
@@ -520,6 +523,9 @@ survey %>%
   mutate(across(where(is.numeric), ~ replace(., is.na(.), 0))) %>% 
   write_csv("./data/survey_mini.csv")
 ```
+
+
+### MSNA mini 
 
 ```{r mini, include=FALSE}
 
