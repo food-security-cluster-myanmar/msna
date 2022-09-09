@@ -147,6 +147,7 @@ mini %>%
        caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")
 
 ```
+
 <br>
 
 This is a good looking, quite normal distribution of food consumption scores. 
