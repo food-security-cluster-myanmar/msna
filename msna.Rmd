@@ -5,7 +5,6 @@ date: "08/09/2022"
 output: 
   html_document:
     code_download: true
-    code_folding: hide
     theme: readable
     toc: true
     toc_depth: 4
