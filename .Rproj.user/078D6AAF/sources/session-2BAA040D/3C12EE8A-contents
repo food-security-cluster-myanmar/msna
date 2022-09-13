@@ -303,7 +303,7 @@ msna %>%
   flextable() %>% 
   theme_zebra() %>% 
   set_table_properties(layout = "autofit", 
-                       width = .7) %>% 
+                       width = .5) %>% 
   set_caption("Percentage of surveyed population with borderline or poor FCS")
    
 ```
@@ -406,7 +406,7 @@ msna %>%
 
 <br>
 
-Ultimately, it would be useful to review the exact Myanmar wording and standardise that across these surveys so that we achieve more comparable results. 
+Ultimately, it would be useful to review the exact Myanmar wording and standardise that across these surveys so that we achieve more comparable results. I suspect that the language around fat is much better in the MSNA since we seem to getting a much more understandable result here. 
 
 <br><br><br>
 
