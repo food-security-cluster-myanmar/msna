@@ -25,6 +25,8 @@
 "0","library(glmnet)"
 "0","library(tidytext)"
 "0","library(flextable)"
+"0","library(skimr)"
+"0","library(RColorBrewer)"
 "0",""
 "0","range01 <- function(x){(x-min(x))/(max(x)-min(x))}"
 "0","range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}"

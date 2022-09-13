@@ -1,0 +1,40 @@
+"0","ifpri %>% 
+  filter(str_detect(var, ""b_|k_|f_01_|f_05_|j_01|j_07|j_08|l2_|k_|e_01|e_03|e_05|e_06|e_07|n_"")) %>% 
+  replace_na(list(value = 0)) %>% 
+  select(hhid, var, value) %>% 
+  pivot_wider(names_from = var, values_from = value) %>% 
+  arrange(hhid) %>% 
+  cbind(msna %>%
+          pivot_wider(names_from = var, values_from = val) %>% 
+          arrange(hhid) %>%
+          select(state, township_code) %>% 
+          filter(!is.na(state))) %>% 
+  select(-matches(""j_02_99"")) %>% 
+  select(-starts_with(""k_02_|k_04_"")) %>% 
+  mutate(fcs_vegetables = pmax(l2_vegetables1, l2_vegetables2, l2_vegetables3, na.rm = TRUE), 
+         fcs_staples = pmax(l2_staples1, l2_staples2, na.rm = TRUE), 
+         fcs_protein = pmax(l2_protein_meat, l2_protein_seafood, l2_protein_eggs,
+                           na.rm = TRUE), 
+         fcs_pulses = pmax(l2_pulses1, l2_pulses2, na.rm = TRUE), 
+         fcs_fruits = pmax(l2_fruits1, l2_fruits2, na.rm = TRUE)) %>% 
+  rename(fcs_sugar = l2_sugar, 
+         fcs_fat = l2_fat, 
+         fcs_dairy = l2_dairy1) %>% 
+  mutate(hhfcs = 
+           (fcs_sugar * .5 + fcs_fat * .5) + 
+           (fcs_vegetables + fcs_fruits) + 
+           (fcs_staples * 2) + 
+           (fcs_pulses * 3) + 
+           (fcs_protein * 4 + fcs_dairy * 4), 
+         hhfcs_inv = range_wna(hhfcs))  %>% 
+  mutate(b_08 = recode(b_08, `20` = 10), 
+         education_level = range_wna(abs(19 - b_08)), 
+         physical_security = recode(j_08, `9997` = 4), 
+         physical_security = range_wna(abs(4 - physical_security))) %>% 
+  mutate(rural_urban = ifelse(b_07 == 1, ""rural"", ""urban""), 
+         rural = ifelse(b_07 == 1, 1, 0))
+"
+"2","Error: Can't subset columns that don't exist.
+[31mx[39m Column `var` doesn't exist.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"

@@ -1,0 +1,32 @@
+"0","mini %>% 
+  select(k_01_sell_assets,
+           k_03_mortgage_assets, 
+           k_05_consumed_seed_stock, 
+           k_06_reduced_agriculture, 
+           k_07_spend_savings, 
+           k_08_reduced_healthcare, 
+           k_09_reduced_nfi, 
+           k_10_reduced_food, 
+           k_11_borrow_food, 
+           k_12_borrow_money, 
+           k_13_migrate,
+           k_14_children_work,
+           k_15_risky_activity) %>% 
+  rename_all(funs(
+    str_sub(., start = 6)
+  )) %>% 
+  cor(method = c(""pearson"")) %>% 
+  corrplot(type = ""upper"", 
+           col = brewer.pal(n = 13, 
+                            name = ""RdBu""), 
+           tl.srt = 55, 
+           title = ""Correlation plot - coping strategies indicators, IFPRI"", 
+           mar = c(0, 0, 2, 0), 
+           diag = FALSE, 
+           addCoef.col = 1, 
+           number.cex = .3,
+           tl.cex = .5)
+"
+"2","Warning: n too large, allowed maximum for palette RdBu is 11
+Returning the palette you asked for with that many colors
+"

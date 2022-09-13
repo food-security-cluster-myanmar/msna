@@ -1,0 +1,31 @@
+"0","mini %>% 
+  mutate(low_education = ifelse(b_08 <= 5, 
+                                ""yes"", ""no"")) %>% 
+  group_by(state, low_education) %>% 
+  summarise(count = n()) %>% 
+  group_by(state) %>% 
+  mutate(pc = round(count / sum(count) * 100, 
+                    digits = 2), 
+         sort = ifelse(low_education == ""yes"", 
+                       pc, 
+                       NA_real_), 
+         sort1 = sort) %>% 
+  fill(sort1, .direction = c(""up"")) %>% 
+  ggplot(aes(x = pc, 
+             y = fct_reorder(state, sort1))) + 
+  geom_col(aes(fill = low_education)) +
+  geom_text(aes(label = sort), 
+            size = 2.5, 
+            hjust = ""inward"", 
+            colour = ""white"", 
+            position = position_dodge()) +
+  scale_fill_manual(values = c(""#0099FF"", ""#000033"")) + 
+  labs(title = ""% of population without primary school attainment"", 
+       subtitle = ""IFPRI"",
+       x = ""Percentage"", 
+       y = """", 
+       fill = ""no pri_sch\nattainment"", 
+       caption = ""Myanmar Household Welfare Survey, IFPRI 2022"")
+"
+"2","`summarise()` has grouped output by 'state'. You can override using the `.groups` argument.
+"

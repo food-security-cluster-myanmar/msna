@@ -1,0 +1,30 @@
+{
+    "id": "3C12EE8A",
+    "path": "~/R/msna/msna.Rmd",
+    "project_path": "msna.Rmd",
+    "type": "r_markdown",
+    "hash": "4059294444",
+    "contents": "",
+    "dirty": false,
+    "created": 1662522816350.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "847,31",
+        "scrollLine": "830",
+        "last_setup_crc32": "2BAA040D7e0ea299",
+        "docOutlineVisible": "1",
+        "docOutlineSize": "76"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1663045543,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1663045543074,
+    "read_only": false,
+    "read_only_alternatives": []
+}

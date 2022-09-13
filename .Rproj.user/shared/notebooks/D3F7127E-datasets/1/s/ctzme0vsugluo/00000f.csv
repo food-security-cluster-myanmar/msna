@@ -1,0 +1,59 @@
+"0","ifpri <- ifpri_raw %>% 
+  select(hhid, 
+         b_04,
+         b_06, 
+         b_07:b_09, 
+         c_01:c_07, 
+         d_01, 
+         e_01, 
+         e_03, 
+         e_05:e_07, 
+         e_08:e_16, 
+         e_16_acres, 
+         e_16_length, 
+         e_16_width, 
+         f_01_01:f_01_07,
+         f_05_01:f_05_08, 
+         g_01_01:g_01_16, 
+         g_02,
+         # not for the moment, we can look at wage employment later
+         g_06_01:g_06_99, 
+         h_01_01:h_08_01, 
+         # We'll look at h_02 later
+         h_02_01:h_02_99,
+         h_03,
+         j_01, 
+         j_02_01:j_02_99, 
+         # We'll look at this later
+         j_05, j_06, 
+         j_07_01:j_07_97, 
+         j_08, 
+         j_10_01:j_10_99, 
+         k_01, 
+         k_02_01:k_02_99, 
+         k_03, 
+         k_04_01:k_04_99, 
+         k_05:k_17, 
+         # we'll tackle this later
+         # l1_01:l1_06, 
+         l2_02_a:l2_16_c, 
+         m_01_01:m_01_98, 
+         m_02:m_07, 
+         n_01:n_06, 
+         o_01_00:o_01_96, 
+         o_02:o_06) %>% 
+  pivot_longer(cols = -hhid, 
+               names_to = ""var"", 
+               values_to = ""value"") %>% 
+  left_join(codebook %>% 
+              mutate(label = str_replace_all(str_to_lower(variable_label), 
+                                          "" "", 
+                                          ""_"")) %>% 
+              select(label, variable_type, variable_name), 
+            by = c(""var"" = ""variable_name"")) %>% 
+  select(label, value, var, hhid, variable_type) %>% 
+  clean_ifpri() 
+"
+"2","Error in mutate(., label = str_replace_all(str_to_lower(variable_label),  : 
+  object 'codebook' not found
+"
