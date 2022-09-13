@@ -1029,7 +1029,7 @@ survey_mini %>%
 
 ## 5. Coping strategies index 
 
-### 5.2 Distribution of coping strategies index scores
+### 5.1 Distribution of coping strategies index scores
 
 The distribution of coping strategies index scores is less than desirable. 
 
@@ -1133,6 +1133,8 @@ mini %>%
 <br>
 
 More so than the other index components, borrowing or reducing food seem to indicate greater problems and serves as an excellent way to distinguish the population in need. Coping strategies index scores are much higher for those who have reduced their food intake and have had to borrow food. 
+
+This is especially applicable for targeting since we would be best served by looking at households who have reduced food intake or borrowed food and are above the, say, 50th percentile of scores for that group. 
 
 <br>
 
