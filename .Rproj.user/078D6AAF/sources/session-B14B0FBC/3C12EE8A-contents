@@ -604,7 +604,7 @@ msna %>%
             hjust = "inward") +
   labs(x = "Percentage of concerns", 
        y = "Protection concerns -- women", 
-       title = "Protection concerns -- women") +
+       title = "Protection concerns -- women, MSNA") +
   theme(plot.title = element_text(size = 10), 
         axis.title.y = element_text(size = 8), 
         axis.title.x = element_text(size = 8)) +
@@ -627,7 +627,7 @@ msna %>%
             hjust = "inward") +
   labs(x = "Percentage of concerns", 
        y = "Protection concerns -- men", 
-       title = "Protection concerns -- men") + 
+       title = "Protection concerns -- men, MSNA") + 
   theme(plot.title = element_text(size = 10), 
         axis.title.y = element_text(size = 8), 
         axis.title.x = element_text(size = 8)) +
@@ -650,7 +650,7 @@ msna %>%
             hjust = "inward") +
    labs(x = "Percentage of concerns", 
        y = "Protection concerns -- girls", 
-       title = "Protection concerns -- girls") + 
+       title = "Protection concerns -- girls, MSNA") + 
   theme(plot.title = element_text(size = 10), 
         axis.title.y = element_text(size = 8), 
         axis.title.x = element_text(size = 8)) +
@@ -673,7 +673,7 @@ msna %>%
             hjust = "inward") +
    labs(x = "Percentage of concerns", 
        y = "Protection concerns -- boys", 
-       title = "Protection concerns -- boys") + 
+       title = "Protection concerns -- boys, MSNA") + 
   theme(plot.title = element_text(size = 10), 
         axis.title.y = element_text(size = 8), 
         axis.title.x = element_text(size = 8))
@@ -724,7 +724,7 @@ msna %>%
             hjust = "inward") +
    labs(x = "Percentage of concerns", 
        y = "Protection concerns", 
-       title = "Top 5 protection concerns by state") + 
+       title = "Top 5 protection concerns by state, MSNA") + 
   scale_y_reordered() + 
   facet_wrap(~ state, 
              ncol = 3, 
@@ -776,7 +776,7 @@ mini %>%
         plot.caption = element_text(hjust = .5)) +
   labs(x = "Percentage of households", y = "", 
        title = "Percentage of households who feel insecure", 
-       subtitle = "(somewhat and very), unweighted", 
+       subtitle = "(somewhat and very), unweighted, IFPRI", 
        caption = "Myanmar Household Welfare Survey, IFPRI 2022")  + 
   
 acled %>%
@@ -811,7 +811,7 @@ acled %>%
   labs(x = "Conflict fatalities per million persons", 
        y = "", 
        title = "Conflict FATALITIES per million persons", 
-       subtitle = "as of 06-06-2022", 
+       subtitle = "as of 06-06-2022, ACLED", 
        caption = "ACLED; acleddata.com") + 
   
 acled %>%
@@ -847,7 +847,7 @@ acled %>%
   labs(x = "Conflict events per million persons", 
        y = "", 
        title = "Conflict EVENTS per million persons", 
-       subtitle = "as of 06-06-2022", 
+       subtitle = "as of 06-06-2022, ACLED", 
        caption = "ACLED; acleddata.com") +
   
 mini %>% 
@@ -871,7 +871,7 @@ mini %>%
         plot.caption = element_text(hjust = .5)) +
   labs(x = "Percentage of households", y = "", 
        title = "Percentage of households who feel VERY insecure", 
-       subtitle = "Unweighted", 
+       subtitle = "Unweighted, IFPRI", 
        caption = "Myanmar Household Welfare Survey, IFPRI 2022")  + 
   
   plot_layout(ncol = 2, 
@@ -949,6 +949,7 @@ msna %>%
           axis.title.x = element_text(size = 7, face = "bold")) +
   labs(x = "Estimate", y = "", 
        title = "Coefficient plot, household FCS with selected indicators", 
+       subtitle = "MSNA", 
        caption = "Myanmar Multi-sector Needs Assessment, REACH 2022")
   
 
@@ -983,6 +984,7 @@ mini %>%
           axis.title.x = element_text(size = 7, face = "bold")) +
   labs(x = "Estimate", y = "", 
        title = "Coefficient plot, household FCS with selected indicators", 
+       subtitle = "IFPRI", 
        caption = "Myanmar Household Welfare Survey, IFPRI 2022")
 
 ```
@@ -1021,6 +1023,7 @@ survey_mini %>%
           axis.title.x = element_text(size = 7, face = "bold")) +
   labs(x = "Estimate", y = "", 
        title = "Coefficient plot, household FCS with selected indicators", 
+       subtitle = "FAO/WFP", 
        caption = "FAO/WFP food security survey round 3 2022") 
 ```
 
@@ -1031,7 +1034,7 @@ survey_mini %>%
 
 ### 5.1 Distribution of coping strategies index scores
 
-The distribution of coping strategies index scores is less than desirable. 
+The distribution of coping strategies index scores in the MSNA is less than desirable. 
 
 <br>
 
@@ -1058,7 +1061,7 @@ msna %>%
                 alpha = .7) + 
   labs(x = "Consumption score index (re-scaled), MSNA survey", 
        title = "Histograms of coping strategies index scores", 
-                  subtitle = "IFPRI 2022")
+                  subtitle = "REACH 2022")
 ```
 
 <br>
@@ -1104,7 +1107,7 @@ mini %>%
   geom_freqpoly(binwidth = .06, 
                 colour = "red",
                 alpha = .7) + 
-  labs(title = "Histograms of coping strategies index scores", 
+  labs(title = "Histogram of coping strategies index scores", 
                   subtitle = "IFPRI 2022", 
        x = "Consumption score index (re-scaled), IFPRI survey",)
 
@@ -1134,7 +1137,7 @@ mini %>%
 
 More so than the other index components, borrowing or reducing food seem to indicate greater problems and serves as an excellent way to distinguish the population in need. Coping strategies index scores are much higher for those who have reduced their food intake and have had to borrow food. 
 
-This is especially applicable for targeting since we would be best served by looking at households who have reduced food intake or borrowed food and are above the, say, 50th percentile of scores for that group. 
+This is especially applicable for targeting since we would be best served by looking at households who have reduced food intake or borrowed food and are above the, say, 75th percentile of scores for that group. 
 
 <br>
 
@@ -1154,13 +1157,43 @@ mini %>%
   labs(x = "Coping strategies index (weighted)", 
        y = "Number of households", 
        title = "Coping strategies indices of those who have reduced food consumption or borrowed food", 
-       subtitle = "vs. those whos have not") +
+       subtitle = "vs. those whos have not", 
+       caption = "IFPRI 2022") +
   theme(legend.position = "none",
         strip.text = element_text(size = 10, face = "bold"),
         strip.background = element_rect(fill = "#212121"), 
         plot.title = element_text(size = 11))
 ```
 
+```{r}
+mini %>%
+  filter(k_10_reduced_food == 1 | k_11_borrow_food == 1) %>% 
+  ggplot(aes(x = csi_weighted)) + 
+  geom_histogram(bins = 30) + 
+  geom_freqpoly(binwidth = .5, 
+                colour = "red", 
+                alpha = .7) + 
+  geom_vline(xintercept = 3.457287, 
+             lty = 2, 
+             colour = "blue", 
+             size = 1.3, 
+             alpha = .5) +
+  geom_vline(xintercept = 4.5, 
+             lty = 2, 
+             colour = "blue", 
+             size = 1.3, 
+             alpha = .5) +  
+  labs(x = "Coping strategies index (weighted)", 
+       y = "Number of households", 
+       title = "Coping strategies indices of those who have reduced food consumption or borrowed food", 
+       subtitle = "First blue line shows the mean, the second the 75th percentile", 
+       caption = "IFPRI 2022") +
+  theme(legend.position = "none",
+        strip.text = element_text(size = 10, face = "bold"),
+        strip.background = element_rect(fill = "#212121"), 
+        plot.title = element_text(size = 11))
+  
+```
 
 
 
@@ -1273,6 +1306,35 @@ survey %>%
 ```
 
 <br>
+
+```{r eval = FALSE}
+survey %>% 
+  select(matches("cs_")) %>% 
+  select(-matches("fcs|raw")) %>% 
+  summarise(across(everything(), sum))
+
+survey %>% nrow()
+
+mini %>% 
+  select(k_01_sell_assets,
+           k_03_mortgage_assets, 
+           k_05_consumed_seed_stock, 
+           k_06_reduced_agriculture, 
+           k_07_spend_savings, 
+           k_08_reduced_healthcare, 
+           k_09_reduced_nfi, 
+           k_10_reduced_food, 
+           k_11_borrow_food, 
+           k_12_borrow_money, 
+           k_13_migrate,
+           k_14_children_work,
+           k_15_risky_activity) %>%
+  summarise(across(everything(), sum))
+
+```
+
+
+Analysing patterns related some of the emergency-level coping strategies indicators might not prove very fruitful. For instance, (thankfully) only 2.4% of households relied on sending their children to work as a coping strategy. The number of households engaging in risky activities was 7.8%. In IFPRI, these percentages were 3.7% and 5.2%, respectively. 
 
 However, it is also immediately apparent how much more detail the full set of indicators (IFPRI and FAO/WFP) adds to this question, compared to the set used in the MSNA.
 

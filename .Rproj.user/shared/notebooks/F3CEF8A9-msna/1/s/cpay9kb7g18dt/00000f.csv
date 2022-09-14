@@ -1,0 +1,32 @@
+"0","survey %>% 
+  select(matches(""cs_"")) %>% 
+  select(-matches(""fcs|raw"")) %>% 
+  select(1:13) %>% 
+  rename_all(funs(
+    str_sub(., start = 11)
+  )) %>% 
+  rename_all(funs(
+    str_replace(., ""cy_"", """")
+  )) %>%
+  cor(method = c(""pearson"")) %>% 
+  corrplot(type = ""upper"", 
+           col = colorRampPalette(brewer.pal(8, ""RdBu""))(13),
+           tl.srt = 55, 
+           title = ""Correlation plot - coping strategies indicators, FAO/WFP"", 
+           mar = c(0, 0, 2, 0), 
+           diag = FALSE, 
+           addCoef.col = 1, 
+           number.cex = .3,
+           tl.cex = .5)
+"
+"2","Warning: `funs()` was deprecated in dplyr 0.8.0.
+Please use a list of either functions or lambdas: 
+
+  # Simple named list: 
+  list(mean = mean, median = median)
+
+  # Auto named with `tibble::lst()`: 
+  tibble::lst(mean, median)
+
+  # Using lambdas
+  list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))"
