@@ -1,0 +1,52 @@
+"0","pin_2022 %>% 
+  select(township, 
+         admin3 = township_pcode, 
+         pin_idp = internally_displaced_people_idp_pi_n, 
+         pin_returnees = id_ps_returnees_resettled_locally_integrated_pi_n, 
+         pin_stateless = non_displaced_stateless_people_in_rakhine_pi_n, 
+         pin_other = mostly_vulnerable_crisis_affected_people_pi_n, 
+         pin_total = total_pi_n,
+         pin_female_pc = female_percent_10,  
+         pin_children_pc = children_age_18_percent_11, 
+         pin_adults_pc = adults_age_18_60_percent_12, 
+         pin_elderly_pc = elderly_age_60_percent_13, 
+         pin_pwd_pc = people_with_disabilities_percent, 
+         target_idp = internally_displaced_people_idp_target, 
+         target_returnees = id_ps_returnees_resettled_locally_integrated_target, 
+         target_stateless = non_displaced_stateless_people_in_rakhine_target, 
+         target_other = mostly_vulnerable_crisis_affected_people_target, 
+         target_total = total_target, 
+         target_female_pc = female_percent_10,
+         target_children_pc = children_age_18_percent_22, 
+         target_adults_pc = adults_age_18_60_percent_23, 
+         target_elderly_pc = elderly_age_60_percent_24) %>% 
+  mutate(target_pwd_pc = pin_pwd_pc) %>% 
+  mutate_at(vars(matches(""_pc"")), 
+            ~ round(.x / 100, digits = 2)) %>% 
+  rename(admin3_pcode = admin3) %>% 
+  arrange(admin3_pcode) %>% 
+  replace(is.na(.), 0) %>% 
+  right_join(
+    pin %>%
+      select(state,
+             admin1_pcode,
+             admin3_pcode,
+             conflict_score,
+             mdp_adjust) %>%
+      mutate_at(vars(conflict_score,
+                     mdp_adjust),
+                ~ scale(.x)) %>%
+      mutate_at(vars(conflict_score,
+                     mdp_adjust),
+                ~ range_wna(.x)) %>%
+      mutate(priority_score = (conflict_score + mdp_adjust) / 2) %>%
+      unnest() %>% 
+      arrange(admin3_pcode),
+    by = ""admin3_pcode""
+  ) %>%
+  do.call(data.frame, .) %>% 
+  as_tibble() %>% 
+  write_csv(""./data/inputs_for_mohie.csv"")
+"
+"2","Warning: `cols` is now required when using unnest().
+Please use `cols = c()`"

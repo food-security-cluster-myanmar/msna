@@ -1,0 +1,145 @@
+"0","pcodes <- read_excel(""./data/Myanmar PCodes Release_9.3_Jan2021_(StRgn_Dist_Tsp_Town_Ward_VT).xlsx"","
+"0","                     sheet = ""03_Township"") "
+"0",""
+"0","acled <- read_csv(""./data/acled_20220606.csv"") %>% "
+"0","  left_join(pcodes %>% select(admin3_pcode = Tsp_Pcode, "
+"0","                             admin2_pcode = `District/SAZ_Pcode`, "
+"0","                             admin2 = `District/SAZ_Name_Eng`,"
+"0","                             admin1_pcode = SR_Pcode),"
+"0","            by = ""admin3_pcode"") %>% "
+"0","  rename(admin2 = admin2.y) %>% "
+"0","  filter(year >= 2021) "
+"2","[1mRows: [22m[34m34233[39m [1mColumns: [22m[34m36[39m
+"
+"2","[36m--[39m [1mColumn specification[22m [36m-----------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (20): event_id_cnty, event_type, sub_event_type, actor1, assoc_actor_1, actor2, assoc_actor_2, reg...
+[32mdbl[39m  (13): data_id, iso, event_id_no_cnty, year, time_precision, inter1, inter2, interaction, latitude,...
+[33mlgl[39m   (2): has_fatalities, non_combatant
+[34mdate[39m  (1): event_date
+"
+"2","
+[36mi[39m Use [38;5;235m[48;5;253m[38;5;235m[48;5;253m`spec()`[48;5;253m[38;5;235m[49m[39m to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set [38;5;235m[48;5;253m[38;5;235m[48;5;253m`show_col_types = FALSE`[48;5;253m[38;5;235m[49m[39m to quiet this message.
+"
+"0","conflict_score <-  read_csv(""./data/conflict_score2.csv"") "
+"2","[1mRows: [22m[34m330[39m [1mColumns: [22m[34m23[39m
+"
+"2","[36m--[39m [1mColumn specification[22m [36m-----------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (4): admin3_pcode, admin1, admin3, cluster
+[32mdbl[39m (19): battles, explosions_remote_violence, protests_and_riots, strategic_developments, violence_aga...
+"
+"2","
+[36mi[39m Use [38;5;235m[48;5;253m[38;5;235m[48;5;253m`spec()`[48;5;253m[38;5;235m[49m[39m to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set [38;5;235m[48;5;253m[38;5;235m[48;5;253m`show_col_types = FALSE`[48;5;253m[38;5;235m[49m[39m to quiet this message.
+"
+"0","pin <- read_csv(""./data/fs_pin.csv"") "
+"2","[1mRows: [22m[34m330[39m [1mColumns: [22m[34m69[39m
+"
+"2","[36m--[39m [1mColumn specification[22m [36m-----------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m  (9): state, admin1_pcode, district, township, admin3_pcode, admin2_pcode, old_group, band_text, cl...
+[32mdbl[39m (60): population_2021_proj, fs_pin, fs_targeted, beneficiaries, battles, explosions_remote_violence...
+"
+"2","
+[36mi[39m Use [38;5;235m[48;5;253m[38;5;235m[48;5;253m`spec()`[48;5;253m[38;5;235m[49m[39m to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set [38;5;235m[48;5;253m[38;5;235m[48;5;253m`show_col_types = FALSE`[48;5;253m[38;5;235m[49m[39m to quiet this message.
+"
+"0","codebook_ifpri <- read_csv(""./data/mhws_rd1_codebook.csv"") %>% clean_names"
+"2","[1mRows: [22m[34m1700[39m [1mColumns: [22m[34m5[39m
+"
+"2","[36m--[39m [1mColumn specification[22m [36m-----------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (4): Variable Name, Variable Label, Answer Label, Variable Type
+[32mdbl[39m (1): Answer Code
+"
+"2","
+[36mi[39m Use [38;5;235m[48;5;253m[38;5;235m[48;5;253m`spec()`[48;5;253m[38;5;235m[49m[39m to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set [38;5;235m[48;5;253m[38;5;235m[48;5;253m`show_col_types = FALSE`[48;5;253m[38;5;235m[49m[39m to quiet this message.
+"
+"0","ifpri_raw <- read_dta(""./data/mhws_rd1.dta"") %>% zap_labels()"
+"2","Warning:"
+"2"," closing unused connection 3 (https://github.com/food-security-cluster-myanmar/mmr_township_prioritisation/blob/main/data/conflict_score2.csv)
+"
+"0","survey <- read_csv(""./data/survey3.csv"")"
+"2","Warning: One or more parsing issues, see `problems()` for details"
+"2","[1mRows: [22m[34m3518[39m [1mColumns: [22m[34m403[39m
+"
+"2","[36m--[39m [1mColumn specification[22m [36m-----------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m   (28): survey_id, operator_id, adm0_name, adm0_iso3, adm1_pcode, adm3_pcode, survey_date, adm3_nam...
+[32mdbl[39m  (362): x, adm1_name, total_case_duration, resp_age, resp_gender, adm3_bago, adm3_magway, adm3_mand...
+[33mlgl[39m   (12): income_third_cropcheck, income_third_remit, hh_migration_other, notefcs, rcsi_note, crop_po...
+[34mdate[39m   (1): qc_step2_date
+"
+"2","
+[36mi[39m Use [38;5;235m[48;5;253m[38;5;235m[48;5;253m`spec()`[48;5;253m[38;5;235m[49m[39m to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set [38;5;235m[48;5;253m[38;5;235m[48;5;253m`show_col_types = FALSE`[48;5;253m[38;5;235m[49m[39m to quiet this message.
+"
+"0","survey_mini <- survey %>%"
+"0","  mutate("
+"0","    edu_higher = ifelse(hoh_education == ""edu_higher"", 1, 0),"
+"0","    edu_low = ifelse(hoh_education %in% c (""edu_none"", ""edu_primary""), 1, 0),"
+"0","    edu_primary = ifelse(hoh_education == ""edu_primary"", 1, 0),"
+"0","    edu_secondary = ifelse(hoh_education == ""edu_secondary"", 1, 0),"
+"0","    # edu_religious = ifelse(hoh_education ==  ""edu_religious"", 1, 0), "
+"0","    hh_debt = case_when(hh_debt_borrow_from %in% c(1, 2) ~ 0, "
+"0","                        hh_debt_borrow_from %in% c(3, 4, 5, 6, 7, 8, 9) ~ 1, "
+"0","                        TRUE ~ 0)) %>%"
+"0","  select("
+"0","    ims_farmer,"
+"0","    ims_other, "
+"0","    ims_public_em, "
+"0","    ims_stable_ag, "
+"0","    ims_stable_non_ag, "
+"0","    ims_casual_ag,"
+"0","    ims_casual_non_ag,"
+"0","    ims_prof_self_em, "
+"0","    ims_no_income, "
+"0","    shocks_conflict,"
+"0","    shocks_lostwork,  "
+"0","    shocks_foodprices, "
+"0","    shocks_cantworkbusiness,"
+"0","    shocks_accesseconomy, "
+"0","    no_accessmarket,"
+"0","    edu_higher,"
+"0","    edu_secondary,"
+"0","    edu_primary,"
+"0","    edu_low,"
+"0","    rural,"
+"0","    children_0_4,"
+"0","    hoh_female,"
+"0","    fies_ateless, fies_fewfoods, fies_healthy, fies_hungry,"
+"0","    fies_worried, fies_ranout, fies_whlday, fies_skipped,"
+"0","    fcs_stap, fcs_pulse, fcs_dairy, fcs_pr,"
+"0","    fcs_veg, fcs_fruit, fcs_fat, fcs_sugar, "
+"0","    fcs_borderline_poor, "
+"0","    cs_stress_hh_assets,"
+"0","    cs_stress_spent_savings,"
+"0","    cs_stress_credit,"
+"0","    cs_stress_borrowed_money,"
+"0","    cs_crisis_sold_prod_assets,"
+"0","    cs_crisis_no_school,"
+"0","    cs_crisis_reduced_health_exp,"
+"0","    cs_crisis_childwork,"
+"0","    cs_crisis_consumed_seed_stocks,"
+"0","    cs_emergency_sold_house,"
+"0","    cs_emergency_hh_risk,"
+"0","    cs_emergency_sold_last_draught,"
+"0","    cs_emergency_hh_migration, "
+"0","    hh_debt_more,"
+"0","    survey_id, "
+"0","    agri_hhd, "
+"0","    hh_size, "
+"0","    no_accessmarket, "
+"0","    not_improved_drinking_water, "
+"0","    tot_income,"
+"0","    income_reduced, "
+"0","    covid_goodstransp, "
+"0","    covid_marketclosed"
+"0","  ) %>%"
+"0","  mutate(across(where(is.numeric), ~ replace(., is.na(.), 0))) "
+"0",""
+"0",""
+"0",""

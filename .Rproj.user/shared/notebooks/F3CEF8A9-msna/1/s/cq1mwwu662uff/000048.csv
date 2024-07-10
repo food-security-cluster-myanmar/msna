@@ -1,0 +1,37 @@
+"0","mini %>% 
+  mutate(count = 1) %>%
+  mutate(e_01 = case_when(e_01 == 1 ~ ""wooden_house"", 
+                          e_01 == 2 ~ ""bamboo"", 
+                          e_01 == 3 ~ ""semi_pacca_house"", 
+                          e_01 == 4 ~ ""bungalow_brick_house"",
+                          e_01 == 5 ~ ""apartment_condominium"", 
+                          e_01 == 6 ~ ""hut_2_3_years"", 
+                          e_01 == 7 ~ ""hut_1_year"", 
+                          TRUE ~ ""other"")) %>%
+  select(e_01, state, count) %>% 
+  group_by(state, e_01) %>% 
+  summarise(count = n()) %>%
+  pivot_wider(names_from = e_01, 
+              values_from = count, 
+              values_fill = 0) %>% 
+  mutate(n = wooden_house +
+           bamboo +
+           semi_pacca_house + 
+           bungalow_brick_house + 
+           apartment_condominium + 
+           hut_2_3_years + 
+           hut_1_year + 
+           other) %>% 
+  mutate_at(c(""apartment_condominium"", 
+                 ""bungalow_brick_house"", 
+                 ""semi_pacca_house"", 
+                 ""wooden_house"",
+                 ""bamboo"", 
+                 ""hut_2_3_years"",
+                 ""hut_1_year"",
+                 ""other""), 
+               ~ round(.x / n * 100, 
+                       digits = 2))
+"
+"2","`summarise()` has grouped output by 'state'. You can override using the `.groups` argument.
+"

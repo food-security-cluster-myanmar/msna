@@ -1,0 +1,19 @@
+"0","ifpri %>% 
+  filter(str_detect(var, ""b_|k_|f_01_|f_05_|j_01|j_07|j_08|l2_|k_|e_01|e_03|e_05|e_06|e_07|n_"")) %>% 
+  replace_na(list(value = 0)) %>% 
+  select(hhid, var, value) %>% 
+  pivot_wider(names_from = var, 
+              values_from = value) %>% 
+  map_df(unlist)
+"
+"2","Warning: Values are not uniquely identified; output will contain list-cols.
+* Use `values_fn = list` to suppress this warning.
+* Use `values_fn = length` to identify where the duplicates arise
+* Use `values_fn = {summary_fun}` to summarise duplicates"
+"2","Error: Tibble columns must have compatible sizes.
+* Size 12100: Columns `hhid`, `b_07`, `b_08`, `b_09`, `e_01`, and 100 more.
+* Size 24200: Columns `k_02_emergency` and `k_04_emergency`.
+* Size 96800: Columns `k_02_crisis` and `k_04_crisis`.
+[34mi[39m Only values of size one are recycled.
+[90mRun `rlang::last_error()` to see where the error occurred.[39m
+"
